@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdelfattah Anwar | Financial Data Analyst</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { bg-color: #f8fafc; color: #334155; background: #f8fafc; line-height: 1.6; }
+        nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255, 255, 255, 0.95); padding: 15px 30px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); z-index: 100; flex-direction: row; justify-content: space-between; display: flex; align-items: center; }
+        nav .logo { font-size: 1.2rem; font-weight: bold; color: #4f46e5; }
+        nav .links a { margin-left: 20px; text-decoration: none; color: #475569; font-weight: 500; }
+        nav .links a:hover { color: #4f46e5; }
+        nav .btn-contact { background: #4f46e5; color: white !important; padding: 8px 16px; rounded-radius: 8px; border-radius: 6px; }
+        .hero { padding: 140px 20px 60px 20px; max-width: 1000px; margin: 0 auto; display: flex; align-items: center; gap: 50px; justify-content: space-between; }
+        .hero-text { flex: 1; }
+        .hero-text h1 { font-size: 2.8rem; color: #0f172a; margin-bottom: 15px; }
+        .hero-text h1 span { color: #4f46e5; }
+        .hero-text p { font-size: 1.1rem; color: #64748b; margin-bottom: 25px; }
+        .hero-btn { background: #4f46e5; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2); }
+        .section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
+        .section-title { font-size: 2rem; color: #0f172a; margin-bottom: 30px; border-bottom: 3px solid #4f46e5; display: inline-block; padding-bottom: 5px; }
+        
+        /* قسم الشهادات المصلح بالكامل */
+        .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 20px; }
+        .cert-card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); text-align: center; }
+        .cert-card img { w-index: 100; width: 100%; height: 200px; object-fit: contain; background: #f1f5f9; border-radius: 8px; margin-bottom: 15px; border: 1px solid #cbd5e1; }
+        .cert-card h3 { font-size: 1rem; color: #0f172a; margin-bottom: 5px; }
+        .cert-card p { font-size: 0.85rem; color: #4f46e5; font-weight: 600; }
+
+        .contact-section { background: #0f172a; color: white; text-align: center; padding: 60px 20px; }
+        .contact-container { max-width: 600px; margin: 0 auto; }
+        .qr-box { background: white; width: 160px; height: 160px; margin: 20px auto; padding: 10px; border-radius: 12px; }
+        .qr-box img { width: 100%; height: 100%; object-fit: contain; }
+        .social-links { display: flex; justify-content: center; gap: 30px; margin-top: 30px; }
+        .social-links a { color: white; font-size: 1.5rem; text-decoration: none; font-weight: bold; background: #1e293b; padding: 10px 20px; border-radius: 8px; border: 1px solid #334155; }
+        .social-links a:hover { background: #4f46e5; border-color: #4f46e5; }
+        @media (max-width: 768px) { .hero { flex-direction: column; text-align: center; padding-top: 100px; } nav .links { display: none; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Abdelfattah Anwar</div>
+        <div class="links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#contact" class="btn-contact">Contact Me</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Hi, I am <span>Abdelfattah Anwar</span></h1>
+            <p>Financial Data Analyst & MIS Specialist. Bridging corporate finance and data analytics to drive strategic growth.</p>
+            <a href="#contact" class="hero-btn">Connect With Me</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <p style="color: #475569; font-size: 1.1rem;">Financial Data Analyst with 5 years of professional experience in accounting, budgeting, and corporate reporting. Certified Power BI Engineer specialized in transforming enterprise metrics into analytical insights.</p>
+    </section>
+
+    <section id="experience" class="section">
+        <h2 class="section-title">Professional Journey</h2>
+        <div style="border-left: 3px solid #4f46e5; padding-left: 20px; margin-top: 10px;">
+            <h3 style="color: #0f172a;">General Accountant / Financial Data Analyst</h3>
+            <p style="color: #4f46e5; font-weight: 500; font-size: 0.9rem;">IT Flag (2022 - Present)</p>
+            <p style="color: #475569; margin-top: 5px;">Managing corporate bookkeeping, optimizing dynamic tracking systems, and configuring ERP data pipelines.</p>
+        </div>
+    </section>
+
+    <section id="certifications" class="section">
+        <h2 class="section-title">Certifications & Credentials</h2>
+        <div class="cert-grid">
+            
+            <div class="cert-card">
+                <img src="certificate-cls.jpg" alt="CLS Certificate">
+                <h3>Certificate of Appreciation</h3>
+                <p>CLS Learning Solutions</p>
+            </div>
+
+            <div class="cert-card">
+                <img src="certificate-mcit.jpeg" alt="MCIT Certificate">
+                <h3>Power BI Engineer Certificate</h3>
+                <p>Ministry of Communications (MCIT)</p>
+            </div>
+
+            <div class="cert-card">
+                <img src="certificate-completion.jpg" alt="DEPI Certificate">
+                <h3>Program Completion</h3>
+                <p>Digital Egypt Pioneers Initiative</p>
+            </div>
+
+            <div class="cert-card">
+                <img src="diploma-aast.jpg" alt="AAST Diploma">
+                <h3>Advanced Data Analysis Diploma</h3>
+                <p>Arab Academy (AASTMT)</p>
+            </div>
+
+            <div class="cert-card">
+                <img src="university-degree.jpg" alt="University Degree">
+                <h3>Bachelor of MIS</h3>
+                <p>High Institute for Computers & MIS</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2 style="font-size: 2rem; margin-bottom: 10px;">Let's Connect Instantly</h2>
+            <p style="color: #94a3b8; margin-bottom: 20px;">Scan the QR code via mobile, or click the buttons below to open chat instantly.</p>
+            
+            <div class="qr-box">
+                <img src="whatsapp-qr.png" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/201286867028'">
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/abdelfattah-sabek-9baa16375" target="_blank">LinkedIn</a>
+                <a href="mailto:abdelfattah.sabek@gmail.com">Email</a>
+                <a href="https://wa.me/201286867028" target="_blank">WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
