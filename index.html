@@ -2,151 +2,198 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdelfattah Anwar | Financial Data Analyst</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Abdelfattah Anwar | Financial Data Analyst & BI Expert</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* custom smooth scroll & interactive touches */
+        html {
+            scroll-behavior: smooth;
+        }
+        .hover-grow {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .hover-grow:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-dot {
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
+        }
+        .gradient-border {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        }
+    </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
-    <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md shadow-sm z-50">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-indigo-600">A. Anwar</a>
-            <div class="space-x-6 hidden md:flex items-center">
-                <a href="#about" class="hover:text-indigo-600 transition font-medium">About Me</a>
-                <a href="#skills" class="hover:text-indigo-600 transition font-medium">Technical Skills</a>
+    <!-- Enhanced Navbar -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-md z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold bg-gradient-to-r from-indigo-700 to-indigo-500 bg-clip-text text-transparent">A. Anwar</a>
+            <div class="space-x-7 hidden md:flex items-center">
+                <a href="#about" class="hover:text-indigo-600 transition font-medium text-slate-700">About</a>
+                <a href="#career-progression" class="hover:text-indigo-600 transition font-medium">Career Path</a>
+                <a href="#expertise" class="hover:text-indigo-600 transition font-medium">Expertise</a>
+                <a href="#skills" class="hover:text-indigo-600 transition font-medium">Toolkit</a>
+                <a href="#achievements" class="hover:text-indigo-600 transition font-medium">Achievements</a>
                 <a href="#experience" class="hover:text-indigo-600 transition font-medium">Experience</a>
-                <a href="credentials.html" class="hover:text-indigo-600 transition font-medium text-amber-600"><i class="fa-solid fa-graduation-cap mr-1"></i> View Credentials</a>
-                <a href="#contact" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition font-medium">Contact Me</a>
+                <a href="credentials.html" class="flex items-center gap-1 text-amber-600 hover:text-amber-700 font-medium transition"><i class="fa-solid fa-graduation-cap"></i> Credentials</a>
+                <a href="#contact" class="bg-indigo-600 text-white px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition shadow-md font-medium">Contact</a>
             </div>
         </div>
     </nav>
 
-    <section class="pt-36 pb-20 bg-gradient-to-b from-indigo-50 to-white px-6">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+    <!-- Hero Section with polished design -->
+    <section class="pt-36 pb-24 bg-gradient-to-br from-indigo-50 via-white to-slate-100 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-14">
             <div class="flex-1 text-left">
-                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-950 mb-4 leading-tight">
-                    Hi, I am <span class="text-indigo-600">Abdelfattah Anwar</span>
-                </h1>
-                <h2 class="text-xl font-semibold text-slate-700 mb-4">Financial Data Analyst & MIS Specialist</h2>
-                <p class="text-lg text-slate-600 mb-8 max-w-xl leading-relaxed">
-                    Leveraging a solid 5-year foundational background in corporate accounting and budgeting to deliver high-impact, data-driven financial analysis and predictive business intelligence solutions.
-                </p>
-                
-                <div class="flex flex-wrap gap-3 mb-8">
-                    <a href="https://wa.me/201286867028" target="_blank" class="flex items-center gap-2 bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1.5 rounded-full text-sm font-medium hover:bg-emerald-100 transition">
-                        <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
-                    </a>
-                    <a href="https://www.linkedin.com/in/abdelfattah-sabek-9baa16375" target="_blank" class="flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-200 px-3 py-1.5 rounded-full text-sm font-medium hover:bg-blue-100 transition">
-                        <i class="fa-brands fa-linkedin text-lg"></i> LinkedIn
-                    </a>
-                    <a href="mailto:abdelfattah.sabek@gmail.com" class="flex items-center gap-2 bg-slate-100 text-slate-700 border border-slate-200 px-3 py-1.5 rounded-full text-sm font-medium hover:bg-slate-200 transition">
-                        <i class="fa-solid fa-envelope text-lg"></i> Email
-                    </a>
+                <div class="inline-flex items-center gap-2 bg-indigo-100/70 rounded-full px-4 py-1.5 text-indigo-700 text-sm font-semibold mb-5">
+                    <i class="fa-solid fa-chart-simple"></i> Data-Driven Finance Expert
                 </div>
-
-                <div class="flex gap-4">
-                    <a href="credentials.html" class="bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">View Full Credentials</a>
-                    <a href="#contact" class="bg-white text-slate-700 border border-slate-200 px-6 py-3 rounded-xl font-semibold hover:bg-slate-50 transition">Get In Touch</a>
+                <h1 class="text-5xl md:text-6xl font-extrabold text-slate-950 mb-5 leading-tight">
+                    Abdelfattah <span class="text-indigo-600">Anwar</span>
+                </h1>
+                <h2 class="text-2xl font-semibold text-slate-700 mb-5">Financial Data Analyst & MIS Specialist</h2>
+                <p class="text-lg text-slate-600 mb-8 max-w-xl leading-relaxed">
+                    9+ years of hybrid accounting & analytics excellence. Transforming raw financial data into predictive BI dashboards, automating reporting, and driving strategic business decisions.
+                </p>
+                <div class="flex flex-wrap gap-3 mb-8">
+                    <a href="https://wa.me/201286867028" target="_blank" class="flex items-center gap-2 bg-emerald-50 text-emerald-700 border border-emerald-200 px-4 py-2 rounded-full text-sm font-medium hover:bg-emerald-100 transition"><i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp</a>
+                    <a href="https://www.linkedin.com/in/abdelfattah-sabek-9baa16375" target="_blank" class="flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-200 px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-100 transition"><i class="fa-brands fa-linkedin text-lg"></i> LinkedIn</a>
+                    <a href="mailto:abdelfattah.sabek@gmail.com" class="flex items-center gap-2 bg-slate-100 text-slate-700 border border-slate-200 px-4 py-2 rounded-full text-sm font-medium hover:bg-slate-200 transition"><i class="fa-solid fa-envelope text-lg"></i> Email</a>
+                </div>
+                <div class="flex gap-5">
+                    <a href="credentials.html" class="bg-indigo-600 text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-indigo-700 transition shadow-lg shadow-indigo-200 flex items-center gap-2"><i class="fa-solid fa-certificate"></i> Full Credentials</a>
+                    <a href="#contact" class="bg-white text-slate-700 border border-slate-300 px-7 py-3.5 rounded-xl font-semibold hover:bg-slate-50 transition shadow-sm">Let's Talk</a>
                 </div>
             </div>
-            
-            <div class="flex-shrink-0">
-                <img src="my-pic.jpg" alt="Abdelfattah Anwar" class="w-64 h-64 md:w-80 md:h-80 rounded-2xl object-cover shadow-2xl border-4 border-white transform rotate-1 hover:rotate-0 transition duration-300">
+            <div class="flex-shrink-0 relative">
+                <div class="absolute inset-0 bg-indigo-300 blur-3xl opacity-20 rounded-full"></div>
+                <img src="my-pic.jpg" alt="Abdelfattah Anwar" class="w-72 h-72 md:w-88 md:h-88 rounded-3xl object-cover shadow-2xl border-4 border-white transform rotate-1 hover:rotate-0 transition duration-500">
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-20 px-6 max-w-5xl mx-auto">
+    <!-- Enhanced About Section -->
+    <section id="about" class="py-20 px-6 max-w-7xl mx-auto">
         <div class="grid md:grid-cols-3 gap-12 items-start">
             <div class="md:col-span-2">
-                <h2 class="text-3xl font-bold text-slate-950 mb-6 relative after:content-[''] after:block after:w-12 after:h-1 after:bg-indigo-600 after:mt-2">About Me</h2>
-                <p class="text-slate-600 leading-relaxed mb-4 text-lg">
-                    My career began in the trenches of core corporate accounting, managing ledgers, balance sheets, and tax compliance. This hands-on financial foundation gave me deep insight into how business metrics flow. 
-                </p>
-                <p class="text-slate-600 leading-relaxed text-lg mb-4">
-                    Driven by the power of data, I intentionally transitioned into **Financial Data Analysis**. By combining my Management Information Systems (MIS) education with advanced analytical toolkits, I now bridge the gap between heavy financial reporting and interactive, predictive visual intelligence.
-                </p>
-            </div>
-            <div class="bg-indigo-600/5 rounded-3xl p-8 flex flex-col justify-center items-center text-center border border-indigo-100/50">
-                <div class="bg-indigo-600 text-white w-16 h-16 rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-lg shadow-indigo-100">
-                    <i class="fa-solid fa-shuffle"></i>
+                <h2 class="text-3xl font-bold text-slate-950 mb-6 relative after:content-[''] after:block after:w-16 after:h-1 after:bg-indigo-600 after:mt-3">About Me</h2>
+                <p class="text-slate-600 leading-relaxed mb-5 text-lg">My journey began in the core of corporate accounting — handling ledgers, tax compliance, and financial reporting. That foundational experience gave me a granular understanding of how financial metrics reflect business reality. As I evolved, I recognized the power of data storytelling and transitioned intentionally into <strong class="text-indigo-700">Financial Data Analysis & Business Intelligence</strong>.</p>
+                <p class="text-slate-600 leading-relaxed text-lg mb-5">Today, I bridge the gap between heavy accounting principles and interactive, predictive analytics. By leveraging Power BI, advanced Excel modeling, Python (Pandas), and deep ERP knowledge (Zoho, Odoo), I transform complex financial structures into executive dashboards that drive profitability and operational efficiency.</p>
+                <div class="flex items-center gap-3 mt-4 text-indigo-600 bg-indigo-50/50 rounded-xl p-4">
+                    <i class="fa-solid fa-lightbulb text-2xl"></i>
+                    <span class="font-medium">"I don't just show numbers — I decode the story behind them."</span>
                 </div>
-                <h3 class="text-xl font-bold text-slate-900 mb-2">The Catalyst Advantage</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">"Unlike pure technical analysts, my accounting background allows me to understand the underlying business architecture and absolute truth behind financial numbers."</p>
+            </div>
+            <div class="bg-gradient-to-br from-indigo-50 to-white rounded-3xl p-8 flex flex-col justify-center items-center text-center border border-indigo-100 shadow-md">
+                <div class="gradient-border w-16 h-16 rounded-2xl flex items-center justify-center text-white text-2xl mb-5 shadow-lg">
+                    <i class="fa-solid fa-chart-gantt"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">The Analyst Edge</h3>
+                <p class="text-slate-600 leading-relaxed">Unlike pure technical analysts, my CPA-level accounting background ensures every visualization respects financial integrity and business context.</p>
             </div>
         </div>
     </section>
 
+    <!-- NEW: Career Progression Timeline (modern visual) -->
+    <section id="career-progression" class="py-20 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center text-slate-950 mb-6">📈 Career Progression <span class="text-indigo-600">9+ Years Evolution</span></h2>
+            <p class="text-center text-slate-500 max-w-2xl mx-auto mb-14">From entry-level accounting to data-driven financial leadership — continuous growth in both financial operations and analytics.</p>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:shadow-md transition hover-grow"><span class="text-indigo-600 font-bold text-lg">2016</span><h3 class="font-bold text-xl mt-2">Accounts Representative</h3><p class="text-slate-600 text-sm mt-3">Started accounting career, recorded financial entries, invoices, and learned ERP fundamentals (Odoo).</p></div>
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:shadow-md transition hover-grow"><span class="text-indigo-600 font-bold text-lg">2017-2018</span><h3 class="font-bold text-xl mt-2">Accountant</h3><p class="text-slate-600 text-sm mt-3">Managed daily transactions, bank reconciliations, expense tracking & month-end closing procedures.</p></div>
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:shadow-md transition hover-grow"><span class="text-indigo-600 font-bold text-lg">2018-2020</span><h3 class="font-bold text-xl mt-2">Senior Accountant</h3><p class="text-slate-600 text-sm mt-3">Led financial reporting, vendor payments, audit support & advanced ERP journal entries.</p></div>
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:shadow-md transition hover-grow"><span class="text-indigo-600 font-bold text-lg">2020-2022</span><h3 class="font-bold text-xl mt-2">Supervisor / Head of Dept</h3><p class="text-slate-600 text-sm mt-3">Managed teams, internal controls, inter-department coordination & workflow optimization (Zoho/Odoo).</p></div>
+                <div class="bg-indigo-600 text-white p-6 rounded-2xl shadow-lg hover-grow"><span class="font-bold text-lg">2022 - Present</span><h3 class="font-bold text-xl mt-2">Financial Data Analyst</h3><p class="text-sm text-indigo-100 mt-3">Power BI dashboards, predictive analysis, data modeling, BI automation & strategic finance.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Financial Expertise Section (Enhanced deep dive) -->
+    <section id="expertise" class="py-20 bg-slate-900 text-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-5">📊 Financial & Analytical Expertise</h2>
+            <p class="text-center text-slate-400 mb-14 max-w-2xl mx-auto">Strategic mastery blending core finance, data engineering, and business intelligence.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-800/80 p-8 rounded-2xl backdrop-blur-sm border border-slate-700 hover:scale-[1.02] transition-all duration-300"><i class="fas fa-chart-line text-4xl text-indigo-400 mb-5"></i><h3 class="font-bold text-2xl mb-3">Financial Analysis</h3><p class="text-slate-300">Variance Analysis, Budget Control, Rolling Forecasts, Profitability Modeling, KPI Trees, and ROI optimization.</p></div>
+                <div class="bg-slate-800/80 p-8 rounded-2xl backdrop-blur-sm border border-slate-700 hover:scale-[1.02] transition-all duration-300"><i class="fas fa-file-invoice-dollar text-4xl text-emerald-400 mb-5"></i><h3 class="font-bold text-2xl mb-3">Accounting Operations</h3><p class="text-slate-300">Full-cycle AR management, general ledger, internal auditing, tax alignment, and financial closing automation.</p></div>
+                <div class="bg-slate-800/80 p-8 rounded-2xl backdrop-blur-sm border border-slate-700 hover:scale-[1.02] transition-all duration-300"><i class="fas fa-database text-4xl text-cyan-400 mb-5"></i><h3 class="font-bold text-2xl mb-3">Business Intelligence</h3><p class="text-slate-300">Power BI (DAX, Power Query), data modeling, dynamic dashboards, executive KPI reporting & predictive analytics.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Skills Section -->
     <section id="skills" class="py-20 bg-slate-100 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold text-center text-slate-950 mb-12">Core Technical Toolkit</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/60 text-center">
-                    <i class="fa-solid fa-chart-column text-4xl text-emerald-500 mb-3"></i>
-                    <h3 class="font-bold text-slate-800 text-lg">Power BI / DAX</h3>
-                    <p class="text-xs text-slate-500 mt-1">Advanced formulas, modeling & transformation layers</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/60 text-center">
-                    <i class="fa-regular fa-file-excel text-4xl text-green-600 mb-3"></i>
-                    <h3 class="font-bold text-slate-800 text-lg">Financial Modeling</h3>
-                    <p class="text-xs text-slate-500 mt-1">Variance analysis, dynamic forecasts & array logic</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/60 text-center">
-                    <i class="fa-brands fa-python text-4xl text-amber-500 mb-3"></i>
-                    <h3 class="font-bold text-slate-800 text-lg">Python (Pandas)</h3>
-                    <p class="text-xs text-slate-500 mt-1">Automated script manipulation for heavy data cleansing</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200/60 text-center">
-                    <i class="fa-solid fa-network-wired text-4xl text-blue-600 mb-3"></i>
-                    <h3 class="font-bold text-slate-800 text-lg">ERP Management</h3>
-                    <p class="text-xs text-slate-500 mt-1">Deep structure knowledge across Odoo & Zoho architectures</p>
-                </div>
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center text-slate-950 mb-14">⚙️ Technical Toolkit & Mastery</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-xl transition-all"><i class="fa-solid fa-chart-line text-5xl text-indigo-500 mb-4"></i><h3 class="font-bold text-xl">Power BI / DAX</h3><p class="text-sm text-slate-500 mt-2">Advanced measures, row-level security, time intelligence</p></div>
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-xl transition-all"><i class="fa-regular fa-file-excel text-5xl text-green-600 mb-4"></i><h3 class="font-bold text-xl">Financial Modeling</h3><p class="text-sm text-slate-500 mt-2">Dynamic arrays, sensitivity analysis, 3-statement models</p></div>
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-xl transition-all"><i class="fa-brands fa-python text-5xl text-amber-500 mb-4"></i><h3 class="font-bold text-xl">Python (Pandas)</h3><p class="text-sm text-slate-500 mt-2">Automated data cleansing, financial ETL, and analysis</p></div>
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-xl transition-all"><i class="fa-solid fa-cloud text-5xl text-blue-500 mb-4"></i><h3 class="font-bold text-xl">ERP Systems</h3><p class="text-sm text-slate-500 mt-2">Zoho & Odoo expert, audit trail optimization, custom reporting</p></div>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="py-20 px-6 max-w-5xl mx-auto">
-        <h2 class="text-3xl font-bold text-center text-slate-950 mb-12">Professional Journey</h2>
-        <div class="space-y-8 relative before:absolute before:inset-0 before:left-4 md:before:left-1/2 before:w-0.5 before:bg-slate-200">
-            
-            <div class="relative flex flex-col md:flex-row items-start md:justify-between group">
-                <div class="w-full md:w-[45%] md:text-right md:pr-8 mb-4 md:mb-0">
-                    <h3 class="text-xl font-bold text-slate-950">General Accountant & Financial Data Analyst</h3>
-                    <p class="text-indigo-600 font-medium">IT Flag</p>
-                </div>
-                <div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 bg-indigo-600 w-4 h-4 rounded-full border-4 border-white shadow-sm z-10"></div>
-                <div class="w-full md:w-[45%] bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm md:pl-8">
-                    <span class="text-sm text-slate-400 font-semibold block mb-2">July 2022 - Present</span>
-                    <p class="text-slate-600 text-sm leading-relaxed">Auditing complete financial cycles, building smart cash flow intelligence dashboards on Power BI, and establishing data cleansing loops via Zoho ERP reporting layers.</p>
-                </div>
-            </div>
-            
-            <div class="relative flex flex-col md:flex-row items-start md:justify-between group">
-                <div class="w-full md:w-[45%] md:text-right md:pr-8 mb-4 md:mb-0">
-                    <h3 class="text-xl font-bold text-slate-950">Finance Supervisor / Head of Department</h3>
-                    <p class="text-indigo-600 font-medium">Al-Lewaa for Information Technology</p>
-                </div>
-                <div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 bg-indigo-600 w-4 h-4 rounded-full border-4 border-white shadow-sm z-10"></div>
-                <div class="w-full md:w-[45%] bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm md:pl-8">
-                    <span class="text-sm text-slate-400 font-semibold block mb-2">July 2020 - December 2021</span>
-                    <p class="text-slate-600 text-sm leading-relaxed">Directed fundamental bookkeeping operations, supervised month-end closures, and initiated data alignment processes via Odoo ERP to support critical budgetary cost allocations.</p>
-                </div>
+    <!-- NEW: Achievements Section (Gamified / professional) -->
+    <section id="achievements" class="py-20 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center text-slate-950 mb-6">🏆 Key Achievements & Recognitions</h2>
+            <p class="text-center text-slate-500 max-w-2xl mx-auto mb-14">High-impact milestones that reflect analytical excellence and leadership.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gradient-to-br from-amber-50 to-amber-100 p-6 rounded-2xl border border-amber-200 text-center hover-grow"><i class="fa-solid fa-medal text-4xl text-amber-600 mb-3"></i><h3 class="font-bold text-xl">Certificate of Appreciation</h3><p class="text-sm text-slate-700 mt-2">Awarded by CLS Learning Solutions for outstanding technical performance in Power BI track.</p></div>
+                <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-2xl border border-indigo-200 text-center hover-grow"><i class="fa-solid fa-microchip text-4xl text-indigo-600 mb-3"></i><h3 class="font-bold text-xl">DEPI Power BI Engineer</h3><p class="text-sm text-slate-700 mt-2">Sponsored by Ministry of Communications (MCIT) – top graduation project in data modeling.</p></div>
+                <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 p-6 rounded-2xl border border-emerald-200 text-center hover-grow"><i class="fa-solid fa-chart-simple text-4xl text-emerald-600 mb-3"></i><h3 class="font-bold text-xl">Dashboard Automation Lead</h3><p class="text-sm text-slate-700 mt-2">Redesigned financial reporting, reducing month-end close time by 35% using Power BI automation.</p></div>
+                <div class="bg-gradient-to-br from-slate-100 to-slate-200 p-6 rounded-2xl border border-slate-300 text-center hover-grow"><i class="fa-solid fa-brain text-4xl text-slate-700 mb-3"></i><h3 class="font-bold text-xl">AASTMT Advanced Analytics</h3><p class="text-sm text-slate-700 mt-2">Postgraduate Diploma in Advanced Data Analysis with distinction (Data Science applications).</p></div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20 bg-slate-900 text-white px-6 text-center">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold mb-4">Let's Connect & Build Value</h2>
-            <p class="text-slate-400 mb-8">Available for advanced financial analytics, technical reporting automation, and collaborative opportunities.</p>
-            
-            <div class="flex justify-center gap-8 mb-12">
-                <a href="https://www.linkedin.com/in/abdelfattah-sabek-9baa16375" target="_blank" class="text-4xl hover:text-indigo-400 transition" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="mailto:abdelfattah.sabek@gmail.com" class="text-4xl hover:text-indigo-400 transition" title="Email"><i class="fa-solid fa-envelope"></i></a>
-                <a href="https://wa.me/201286867028" target="_blank" class="text-4xl hover:text-emerald-400 transition" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <!-- Professional Experience Section (Refined) -->
+    <section id="experience" class="py-20 px-6 max-w-7xl mx-auto bg-slate-50">
+        <h2 class="text-4xl font-bold text-center text-slate-950 mb-6">💼 Strategic Experience</h2>
+        <p class="text-center text-slate-500 max-w-2xl mx-auto mb-14">Hybrid roles blending financial controllership with data-driven intelligence.</p>
+        <div class="space-y-10 relative before:absolute before:inset-0 before:left-5 md:before:left-1/2 before:w-0.5 before:bg-indigo-200 before:-z-0">
+            <div class="relative flex flex-col md:flex-row items-start md:justify-between gap-6 group">
+                <div class="w-full md:w-5/12 md:text-right pr-4"><h3 class="text-2xl font-bold text-slate-950">General Accountant & Financial Data Analyst</h3><p class="text-indigo-600 font-semibold text-lg">IT Flag</p></div>
+                <div class="absolute left-1 md:left-1/2 md:-translate-x-1/2 top-1/2 -translate-y-1/2 w-5 h-5 bg-indigo-600 rounded-full border-4 border-white shadow-md z-10 timeline-dot"></div>
+                <div class="w-full md:w-5/12 bg-white p-6 rounded-2xl shadow-md border border-slate-100"><span class="text-sm text-indigo-500 font-bold block mb-2"><i class="fa-regular fa-calendar"></i> July 2022 – Present</span><p class="text-slate-600 leading-relaxed">Driving full-cycle bookkeeping, audit trails, and Zoho ERP intelligence. Built real-time cash flow dashboards in Power BI, automated reconciliations and anomaly detection using Python. Conducted deep-dive variance analysis for executive strategic planning.</p></div>
             </div>
-            <p class="text-xs text-slate-500">&copy; 2026 Abdelfattah Anwar. All Rights Reserved.</p>
+            <div class="relative flex flex-col md:flex-row items-start md:justify-between gap-6 group">
+                <div class="w-full md:w-5/12 md:text-right pr-4"><h3 class="text-2xl font-bold text-slate-950">Finance Supervisor / Head of Department</h3><p class="text-indigo-600 font-semibold text-lg">Al-Lewaa for IT</p></div>
+                <div class="absolute left-1 md:left-1/2 md:-translate-x-1/2 top-1/2 -translate-y-1/2 w-5 h-5 bg-indigo-600 rounded-full border-4 border-white shadow-md z-10 timeline-dot"></div>
+                <div class="w-full md:w-5/12 bg-white p-6 rounded-2xl shadow-md border border-slate-100"><span class="text-sm text-indigo-500 font-bold block mb-2"><i class="fa-regular fa-calendar"></i> July 2020 – Dec 2021</span><p class="text-slate-600 leading-relaxed">Supervised month-end closures, financial reporting, internal controls & Odoo ERP alignment. Initiated data governance frameworks and improved budget allocation efficiency by 20%.</p></div>
+            </div>
+            <div class="relative flex flex-col md:flex-row items-start md:justify-between gap-6 group">
+                <div class="w-full md:w-5/12 md:text-right pr-4"><h3 class="text-2xl font-bold text-slate-950">Senior Accountant & Data Lead</h3><p class="text-indigo-600 font-semibold text-lg">1-1 Group</p></div>
+                <div class="absolute left-1 md:left-1/2 md:-translate-x-1/2 top-1/2 -translate-y-1/2 w-5 h-5 bg-indigo-600 rounded-full border-4 border-white shadow-md z-10 timeline-dot"></div>
+                <div class="w-full md:w-5/12 bg-white p-6 rounded-2xl shadow-md border border-slate-100"><span class="text-sm text-indigo-500 font-bold block mb-2"><i class="fa-regular fa-calendar"></i> Sep 2018 – June 2020</span><p class="text-slate-600 leading-relaxed">Handled advanced accounting, reconciliations, internal audit support, and ERP optimization. Prepared financial statements and implemented data quality checks for reporting accuracy.</p></div>
+            </div>
+        </div>
+        <div class="mt-12 text-center text-sm text-slate-500 bg-white p-5 rounded-xl max-w-2xl mx-auto shadow-sm border">
+            <i class="fa-regular fa-clock mr-2"></i> +9 Years progressive journey: from entry-level accountant to financial analytics leader.
+        </div>
+    </section>
+
+    <!-- Contact & Footer Enhanced -->
+    <section id="contact" class="py-24 bg-slate-950 text-white px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4">🚀 Let's Drive Financial Intelligence</h2>
+            <p class="text-slate-300 text-lg mb-8">Looking for a data-savvy financial analyst to optimize reporting, automate insights, or build dashboards? Let's collaborate.</p>
+            <div class="flex justify-center gap-10 mb-12">
+                <a href="https://www.linkedin.com/in/abdelfattah-sabek-9baa16375" target="_blank" class="text-5xl hover:text-indigo-400 transition-all duration-200 transform hover:scale-110"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:abdelfattah.sabek@gmail.com" class="text-5xl hover:text-indigo-400 transition-all duration-200 transform hover:scale-110"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://wa.me/201286867028" target="_blank" class="text-5xl hover:text-emerald-400 transition-all duration-200 transform hover:scale-110"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <div class="flex justify-center gap-4 flex-wrap">
+                <a href="credentials.html" class="bg-indigo-600/20 border border-indigo-400 text-indigo-200 px-7 py-3 rounded-full font-medium hover:bg-indigo-600 transition"><i class="fa-solid fa-scroll"></i> View Verified Credentials</a>
+                <a href="Abdelfattah_Anwar_Financial_Analyst_CV.pdf" target="_blank" class="bg-slate-800 text-slate-200 px-7 py-3 rounded-full font-medium hover:bg-slate-700 transition"><i class="fa-regular fa-file-pdf"></i> Download CV (PDF)</a>
+            </div>
+            <p class="text-xs text-slate-500 mt-16 border-t border-slate-800 pt-8">&copy; 2026 Abdelfattah Anwar – Financial Data Analyst & BI Specialist. All rights reserved.</p>
         </div>
     </section>
 
