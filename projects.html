@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power BI Projects | Abdelfattah Anwar Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold text-indigo-600"><i class="fa-solid fa-arrow-left mr-2"></i> Back to Home</a>
+            <span class="text-sm font-semibold text-slate-500"><i class="fa-solid fa-chart-line mr-1"></i> Power BI Portfolio</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-12 bg-gradient-to-r from-indigo-700 to-indigo-900 text-white px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">📊 Power BI Projects Portfolio</h1>
+            <p class="text-lg text-indigo-100 mb-6">Professional dashboards with detailed case studies, methodology, and business impact</p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="bg-white/20 px-4 py-2 rounded-full text-sm">Power BI</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full text-sm">DAX</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full text-sm">Power Query</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full text-sm">Data Modeling</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full text-sm">ETL</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="py-12 px-6 max-w-7xl mx-auto">
+
+        <!-- ============================================================ -->
+        <!-- PROJECT 1: Comprehensive Business Dashboard -->
+        <!-- ============================================================ -->
+        <div class="mb-20" id="project1">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4">
+                    <h2 class="text-2xl font-bold">📈 Comprehensive Business Dashboard</h2>
+                    <p class="text-purple-100 mt-1">End-to-end business intelligence solution for executive decision making</p>
+                </div>
+                <div class="p-8">
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-indigo-50 rounded-xl p-4 text-center">
+                            <i class="fa-brands fa-github text-2xl text-indigo-600 mb-2"></i>
+                            <p class="text-xs text-slate-500">Repository</p>
+                            <p class="font-semibold text-sm">View on GitHub</p>
+                        </div>
+                        <div class="bg-indigo-50 rounded-xl p-4 text-center">
+                            <i class="fa-solid fa-chart-line text-2xl text-indigo-600 mb-2"></i>
+                            <p class="text-xs text-slate-500">Key Metrics</p>
+                            <p class="font-semibold text-sm">Sales, Profit, Inventory, KPIs</p>
+                        </div>
+                        <div class="bg-indigo-50 rounded-xl p-4 text-center">
+                            <i class="fa-solid fa-calendar text-2xl text-indigo-600 mb-2"></i>
+                            <p class="text-xs text-slate-500">Time Period</p>
+                            <p class="font-semibold text-sm">Multi-year analysis</p>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-circle-info text-indigo-500 text-lg"></i> Business Challenge</h3>
+                            <p class="text-slate-600 leading-relaxed">The organization lacked a centralized view of business performance across sales, inventory, and finance. Decision-makers relied on disparate Excel reports leading to delayed insights and missed opportunities.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-gear text-indigo-500 text-lg"></i> Solution & Methodology</h3>
+                            <ul class="list-disc list-inside text-slate-600 space-y-2 ml-4">
+                                <li>Connected and transformed data from multiple sources using <strong>Power Query</strong> (sales, inventory, financial tables)</li>
+                                <li>Built a <strong>star schema data model</strong> with fact and dimension tables for optimal performance</li>
+                                <li>Created <strong>20+ DAX measures</strong> including YTD, MoM growth, moving averages, and variance analysis</li>
+                                <li>Designed interactive visuals with <strong>drill-through pages</strong> for detailed analysis by product category and region</li>
+                                <li>Implemented <strong>row-level security (RLS)</strong> for role-based access (managers see only their regions)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-chart-simple text-indigo-500 text-lg"></i> Key Dashboard Features</h3>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-slate-50 rounded-xl p-4 border"><i class="fa-solid fa-chart-pie text-indigo-500 mb-2"></i><p class="font-semibold">Sales Performance</p><p class="text-sm text-slate-500">Revenue trends, top products, regional breakdown</p></div>
+                                <div class="bg-slate-50 rounded-xl p-4 border"><i class="fa-solid fa-boxes text-indigo-500 mb-2"></i><p class="font-semibold">Inventory Analysis</p><p class="text-sm text-slate-500">Stock levels, turnover ratios, reorder alerts</p></div>
+                                <div class="bg-slate-50 rounded-xl p-4 border"><i class="fa-solid fa-coins text-indigo-500 mb-2"></i><p class="font-semibold">Financial KPIs</p><p class="text-sm text-slate-500">Gross margin, operating expenses, profit analysis</p></div>
+                                <div class="bg-slate-50 rounded-xl p-4 border"><i class="fa-solid fa-calendar-week text-indigo-500 mb-2"></i><p class="font-semibold">Time Intelligence</p><p class="text-sm text-slate-500">YoY, QoQ, MoM comparisons with forecasting</p></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-chart-line text-indigo-500 text-lg"></i> Business Impact</h3>
+                            <div class="grid md:grid-cols-3 gap-4 text-center">
+                                <div class="bg-emerald-50 rounded-xl p-4"><p class="text-2xl font-bold text-emerald-600">35%</p><p class="text-xs text-slate-500">Reduction in reporting time</p></div>
+                                <div class="bg-emerald-50 rounded-xl p-4"><p class="text-2xl font-bold text-emerald-600">Real-time</p><p class="text-xs text-slate-500">Data refresh daily</p></div>
+                                <div class="bg-emerald-50 rounded-xl p-4"><p class="text-2xl font-bold text-emerald-600">Single</p><p class="text-xs text-slate-500">Source of Truth</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 flex gap-4 flex-wrap">
+                        <a href="https://github.com/abdelfattah-sabek/abdelfattah-sabek.github.io" target="_blank" class="bg-indigo-600 text-white px-6 py-2 rounded-xl hover:bg-indigo-700 transition flex items-center gap-2"><i class="fa-brands fa-github"></i> View on GitHub →</a>
+                        <a href="#project2" class="bg-slate-200 text-slate-700 px-6 py-2 rounded-xl hover:bg-slate-300 transition">↓ Next Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- PROJECT 2: HR Analytics Dashboard -->
+        <!-- ============================================================ -->
+        <div class="mb-20" id="project2">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4">
+                    <h2 class="text-2xl font-bold">👥 HR Analytics Dashboard</h2>
+                    <p class="text-emerald-100 mt-1">Workforce analytics to reduce attrition and optimize talent management</p>
+                </div>
+                <div class="p-8">
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-emerald-50 rounded-xl p-4 text-center"><i class="fa-brands fa-github text-2xl text-emerald-600 mb-2"></i><p class="text-xs">Repository</p><p class="font-semibold text-sm">View on GitHub</p></div>
+                        <div class="bg-emerald-50 rounded-xl p-4 text-center"><i class="fa-solid fa-users text-2xl text-emerald-600 mb-2"></i><p class="text-xs">Focus</p><p class="font-semibold text-sm">Attrition & Recruitment</p></div>
+                        <div class="bg-emerald-50 rounded-xl p-4 text-center"><i class="fa-solid fa-chart-line text-2xl text-emerald-600 mb-2"></i><p class="text-xs">Key Metrics</p><p class="font-semibold text-sm">Retention, Satisfaction, Headcount</p></div>
+                    </div>
+                    <div class="space-y-6">
+                        <div><h3 class="text-xl font-bold mb-3"><i class="fa-solid fa-circle-info text-emerald-500 mr-2"></i> Business Challenge</h3><p class="text-slate-600">High employee turnover and lack of visibility into attrition drivers. HR team needed data-driven insights to improve retention strategies and recruitment efficiency.</p></div>
+                        <div><h3 class="text-xl font-bold mb-3"><i class="fa-solid fa-gear text-emerald-500 mr-2"></i> Solution & Methodology</h3><ul class="list-disc list-inside text-slate-600 space-y-1 ml-4"><li>Cleaned and merged employee data, performance reviews, and exit interviews using Power Query</li><li>Built DAX measures for attrition rate, average tenure, hiring funnel conversion, and satisfaction scores</li><li>Created department-level KPIs with trend analysis over 3 years</li><li>Designed what-if parameters to simulate retention program impact</li></ul></div>
+                        <div><h3 class="text-xl font-bold mb-3"><i class="fa-solid fa-chart-simple text-emerald-500 mr-2"></i> Key Dashboard Features</h3><div class="grid md:grid-cols-2 gap-4"><div class="bg-slate-50 p-3 rounded border"><p class="font-semibold">📊 Attrition Analysis</p><p class="text-sm">By department, role, age group, tenure</p></div><div class="bg-slate-50 p-3 rounded border"><p class="font-semibold">🎯 Recruitment Funnel</p><p class="text-sm">Applications → Interviews → Hires</p></div><div class="bg-slate-50 p-3 rounded border"><p class="font-semibold">⭐ Employee Satisfaction</p><p class="text-sm">Survey scores by team and manager</p></div><div class="bg-slate-50 p-3 rounded border"><p class="font-semibold">💰 Cost of Turnover</p><p class="text-sm">Financial impact of attrition</p></div></div></div>
+                        <div><h3 class="text-xl font-bold mb-3"><i class="fa-solid fa-chart-line text-emerald-500 mr-2"></i> Business Impact</h3><div class="grid md:grid-cols-3 gap-4 text-center"><div class="bg-emerald-50 p-4 rounded"><p class="text-2xl font-bold text-emerald-600">15%</p><p class="text-xs">Reduction in attrition</p></div><div class="bg-emerald-50 p-4 rounded"><p class="text-2xl font-bold text-emerald-600">30%</p><p class="text-xs">Faster hiring process</p></div><div class="bg-emerald-50 p-4 rounded"><p class="text-2xl font-bold text-emerald-600">↑22%</p><p class="text-xs">Employee satisfaction</p></div></div></div>
+                    </div>
+                    <div class="mt-8 flex gap-4"><a href="https://github.com/abdelfattah-sabek/abdelfattah-sabek.github.io" target="_blank" class="bg-emerald-600 text-white px-6 py-2 rounded-xl hover:bg-emerald-700 transition flex items-center gap-2"><i class="fa-brands fa-github"></i> View on GitHub →</a><a href="#project3" class="bg-slate-200 text-slate-700 px-6 py-2 rounded-xl">↓ Next Project</a></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- PROJECT 3: Bakery Sales Dashboard (تم تعديل اسم الصورة) -->
+        <!-- ============================================================ -->
+        <div class="mb-20" id="project3">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="bg-gradient-to-r from-amber-600 to-orange-600 text-white px-8 py-4">
+                    <h2 class="text-2xl font-bold">🥐 Bakery Sales Analytics</h2>
+                    <p class="text-amber-100 mt-1">Sales performance optimization for multi-branch bakery chain</p>
+                </div>
+                <div class="p-8">
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-amber-50 rounded-xl p-4 text-center"><i class="fa-solid fa-image text-2xl text-amber-600 mb-2"></i><p class="text-xs">Assets</p><p class="font-semibold text-sm">Dashboard + Data Cleaning Script</p></div>
+                        <div class="bg-amber-50 rounded-xl p-4 text-center"><i class="fa-solid fa-chart-line text-2xl text-amber-600 mb-2"></i><p class="text-xs">Focus</p><p class="font-semibold text-sm">Sales Trends & Product Performance</p></div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <div><h3 class="text-xl font-bold mb-2">📋 Business Challenge</h3><p class="text-slate-600">Bakery chain with multiple locations lacked visibility into peak hours, best-selling products, and underperforming stores. Manual Excel reporting was time-consuming and error-prone.</p></div>
+                            <div><h3 class="text-xl font-bold mb-2">⚙️ Technical Approach</h3><ul class="list-disc list-inside text-slate-600 ml-4"><li>Extracted and cleaned transaction data using Power Query (removed duplicates, handled nulls, standardized date/time formats)</li><li>Created calculated columns for hour of day, day of week, and product categories</li><li>Built DAX measures for average order value, hourly sales velocity, and cannibalization analysis</li><li>Designed mobile-responsive dashboard for store managers</li></ul></div>
+                        </div>
+                        <div class="space-y-4">
+                            <div><h3 class="text-xl font-bold mb-2">📸 Visual Assets</h3><div class="flex gap-3 flex-wrap"><a href="bakery-sales-dashboard-main.png" target="_blank" class="bg-amber-100 text-amber-700 px-4 py-2 rounded-lg text-sm hover:bg-amber-200">View Dashboard Screenshot →</a><a href="bakery-data-cleaning-powerquery.png" target="_blank" class="bg-slate-100 text-slate-600 px-4 py-2 rounded-lg text-sm hover:bg-slate-200">View Power Query Steps →</a></div></div>
+                            <div><h3 class="text-xl font-bold mb-2">📈 Business Impact</h3><div class="grid grid-cols-2 gap-3"><div class="bg-emerald-50 p-3 rounded text-center"><p class="text-xl font-bold text-emerald-600">20%</p><p class="text-xs">Sales increase (peak hours)</p></div><div class="bg-emerald-50 p-3 rounded text-center"><p class="text-xl font-bold text-emerald-600">40%</p><p class="text-xs">Faster reporting</p></div></div></div>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-center text-slate-500 text-sm bg-slate-50 p-3 rounded-lg">📌 Data cleaning script available upon request</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- PROJECT 4: Car Sales Dashboard (تم إضافة الصورة الثالثة) -->
+        <!-- ============================================================ -->
+        <div class="mb-20" id="project4">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-4">
+                    <h2 class="text-2xl font-bold">🚗 Car Sales Dashboard</h2>
+                    <p class="text-blue-100 mt-1">Dealership performance & inventory optimization</p>
+                </div>
+                <div class="p-8">
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-blue-50 rounded-xl p-4 text-center"><i class="fa-solid fa-car text-2xl text-blue-600 mb-2"></i><p class="text-xs">Focus</p><p class="font-semibold text-sm">Dealer KPIs & Inventory</p></div>
+                        <div class="bg-blue-50 rounded-xl p-4 text-center"><i class="fa-solid fa-chart-line text-2xl text-blue-600 mb-2"></i><p class="text-xs">Key Metrics</p><p class="font-semibold text-sm">Sales, Margin, Turnover</p></div>
+                        <div class="bg-blue-50 rounded-xl p-4 text-center"><i class="fa-solid fa-image text-2xl text-blue-600 mb-2"></i><p class="text-xs">Assets</p><p class="font-semibold text-sm">Dashboard + Data Model</p></div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div><h3 class="text-xl font-bold mb-2">📋 Business Challenge</h3><p class="text-slate-600">Automotive dealership group needed real-time visibility into sales performance across multiple brands and locations. Inventory was not optimized leading to carrying costs and missed sales.</p><div class="mt-4"><h3 class="text-xl font-bold mb-2">⚙️ Technical Approach</h3><ul class="list-disc list-inside text-slate-600 ml-4"><li>Integrated data from CRM, inventory system, and financial software</li><li>Built star schema model with dealer, vehicle, time, and sales fact tables</li><li>Created DAX measures for gross margin, days-in-stock, and sales velocity</li><li>Designed map visual for geographic sales distribution</li></ul></div></div>
+                        <div><div class="flex gap-3 flex-wrap mb-4"><a href="car-sales-dashboard-overview.png" target="_blank" class="bg-blue-100 text-blue-700 px-4 py-2 rounded-lg text-sm hover:bg-blue-200">View Dashboard Overview →</a><a href="car-sales-data-model.png" target="_blank" class="bg-slate-100 text-slate-600 px-4 py-2 rounded-lg text-sm hover:bg-slate-200">View Data Model →</a><a href="car-sales-performance.png" target="_blank" class="bg-blue-100 text-blue-700 px-4 py-2 rounded-lg text-sm hover:bg-blue-200">View Performance Analysis →</a></div><div><h3 class="text-xl font-bold mb-2">📈 Business Impact</h3><div class="grid grid-cols-2 gap-3"><div class="bg-emerald-50 p-3 rounded text-center"><p class="text-xl font-bold text-emerald-600">12%</p><p class="text-xs">Increase in inventory turnover</p></div><div class="bg-emerald-50 p-3 rounded text-center"><p class="text-xl font-bold text-emerald-600">25%</p><p class="text-xs">Faster sales reporting</p></div></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- PROJECT 5: HR Dashboard Detailed + Future Orders -->
+        <!-- ============================================================ -->
+        <div class="mb-20" id="project5">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="bg-gradient-to-r from-rose-600 to-pink-600 text-white px-8 py-4">
+                    <h2 class="text-2xl font-bold">📊 HR Dashboard & Future Orders Analysis</h2>
+                    <p class="text-rose-100 mt-1">Workforce analytics + demand forecasting datasets</p>
+                </div>
+                <div class="p-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div><div class="flex gap-3 flex-wrap mb-4"><a href="hr-analytics-dashboard-overview.png" target="_blank" class="bg-rose-100 text-rose-700 px-4 py-2 rounded-lg text-sm hover:bg-rose-200">View HR Dashboard →</a><a href="hr-data-cleaning-powerquery.png" target="_blank" class="bg-slate-100 text-slate-600 px-4 py-2 rounded-lg text-sm hover:bg-slate-200">View Power Query Steps →</a></div><p class="text-slate-600 text-sm mt-2">HR Dashboard includes: employee demographics, attrition trends, recruitment pipeline, satisfaction scores, and departmental headcount with interactive filters for drill-down analysis.</p></div>
+                        <div><a href="https://github.com/abdelfattah-sabek/abdelfattah-sabek.github.io" target="_blank" class="bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 transition flex items-center gap-2 justify-center mb-3"><i class="fa-brands fa-github"></i> View Future Orders Dataset on GitHub →</a><p class="text-slate-500 text-xs text-center">Raw data for demand forecasting and order analysis — store-level orders, product categories, lead time metrics</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Summary -->
+        <div class="mt-12 bg-slate-800 rounded-2xl p-8 text-white text-center">
+            <h3 class="text-2xl font-bold mb-4">🔧 Technical Skills Demonstrated</h3>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="bg-indigo-500/30 px-4 py-2 rounded-full">Power BI Desktop</span>
+                <span class="bg-indigo-500/30 px-4 py-2 rounded-full">DAX (Calculated Columns & Measures)</span>
+                <span class="bg-indigo-500/30 px-4 py-2 rounded-full">Power Query M Language</span>
+                <span class="bg-indigo-500/30 px-4 py-2 rounded-full">Star Schema Modeling</span>
+                <span class="bg-indigo-500/30 px-4 py-2 rounded-full">Row-Level Security</span>
+                <span class="bg-indigo-500/30 px-4 py-2 rounded-full">Drill-through Pages</span>
+                <span class="bg-indigo-500/30 px-4 py-2 rounded-full">What-if Parameters</span>
+                <span class="bg-indigo-500/30 px-4 py-2 rounded-full">Time Intelligence (YTD, QoQ, MoM)</span>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="mt-12 text-center bg-white rounded-2xl p-8 border">
+            <h3 class="text-2xl font-bold mb-3">💼 Open for Opportunities</h3>
+            <p class="text-slate-600 mb-5">Looking for Power BI development, data analysis, or dashboard consulting roles.</p>
+            <a href="index.html#contact" class="bg-indigo-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-indigo-700 transition inline-flex items-center gap-2">Contact Me <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 py-6 text-center text-slate-400 text-sm">
+        <p>© 2026 Abdelfattah Anwar – Power BI Portfolio. All projects include detailed documentation.</p>
+    </footer>
+</body>
+</html>
