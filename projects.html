@@ -59,6 +59,87 @@ border-radius:20px;
 }
 </style>
 
+
+<style>
+:root{
+ --primary:#4f46e5;
+ --secondary:#7c3aed;
+ --text:#0f172a;
+}
+body{
+ background:
+ radial-gradient(circle at top right, rgba(99,102,241,.08), transparent 35%),
+ linear-gradient(180deg,#f8fafc 0%,#eef4ff 100%);
+ color:var(--text);
+}
+nav{
+ backdrop-filter:blur(16px);
+ border-bottom:1px solid rgba(255,255,255,.2);
+}
+section{
+ position:relative;
+ overflow:hidden;
+}
+section::after{
+ content:'';
+ position:absolute;
+ width:500px;
+ height:500px;
+ border-radius:50%;
+ background:rgba(255,255,255,.06);
+ top:-250px;
+ right:-120px;
+}
+.bg-white{
+ border:1px solid rgba(226,232,240,.8);
+ box-shadow:0 10px 35px rgba(15,23,42,.06)!important;
+ transition:all .35s ease!important;
+}
+.bg-white:hover{
+ transform:translateY(-8px);
+ box-shadow:0 25px 60px rgba(79,70,229,.15)!important;
+}
+h1{
+ font-weight:800!important;
+ letter-spacing:-0.04em;
+}
+h2{
+ letter-spacing:-0.03em;
+}
+h3{
+ letter-spacing:-0.02em;
+}
+img{
+ border-radius:12px;
+ transition:all .5s ease;
+}
+img:hover{
+ transform:scale(1.025);
+}
+a{
+ transition:all .25s ease;
+}
+a:hover{
+ transform:translateY(-2px);
+}
+.grid > div{
+ transition:all .3s ease;
+}
+.grid > div:hover{
+ transform:translateY(-4px);
+}
+html{
+ scroll-padding-top:100px;
+}
+::-webkit-scrollbar{
+ width:10px;
+}
+::-webkit-scrollbar-thumb{
+ background:linear-gradient(#6366f1,#8b5cf6);
+ border-radius:30px;
+}
+</style>
+
 </head>
 <body class="bg-slate-50">
 
