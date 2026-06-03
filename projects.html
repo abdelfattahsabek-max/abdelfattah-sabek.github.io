@@ -1,41 +1,49 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Power BI Projects | Abdelfattah Anwar Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        html { scroll-behavior: smooth; }
-        .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.15);
-        }
-    </style>
-</head>
-<body class="bg-slate-50">
-
-    <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-md z-50">
+<nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md border-b border-slate-100 z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-bold text-indigo-600"><i class="fa-solid fa-arrow-left mr-2"></i> Back to Home</a>
-            <span class="text-sm font-semibold text-slate-500"><i class="fa-solid fa-chart-line mr-1"></i> Power BI Portfolio</span>
+            <a href="index.html" class="text-sm font-bold text-indigo-600 hover:text-indigo-700 transition flex items-center gap-2">
+                <i class="fa-solid fa-arrow-left"></i> Back to Home
+            </a>
+            <div class="flex items-center gap-2 text-xs font-semibold text-slate-500 bg-slate-100 px-3 py-1.5 rounded-full">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+                <span>Power BI Portfolio</span>
+            </div>
         </div>
     </nav>
 
-    <section class="pt-32 pb-12 bg-gradient-to-r from-indigo-700 to-indigo-900 text-white px-6 text-center">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">📊 Power BI Projects Portfolio</h1>
-            <p class="text-lg text-indigo-100 mb-6">Professional dashboards with detailed case studies, methodology, and business impact</p>
-            <div class="flex flex-wrap justify-center gap-3">
-                <span class="bg-white/20 px-4 py-2 rounded-full text-sm">Power BI</span>
-                <span class="bg-white/20 px-4 py-2 rounded-full text-sm">DAX</span>
-                <span class="bg-white/20 px-4 py-2 rounded-full text-sm">Power Query</span>
-                <span class="bg-white/20 px-4 py-2 rounded-full text-sm">Data Modeling</span>
-                <span class="bg-white/20 px-4 py-2 rounded-full text-sm">ETL</span>
+    <section class="relative pt-40 pb-20 bg-slate-900 overflow-hidden text-center px-6">
+        <div class="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#4f4f4f_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        
+        <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-indigo-600/20 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="relative max-w-4xl mx-auto">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white text-3xl shadow-xl shadow-indigo-900/40 mb-6 transform hover:rotate-6 transition-transform duration-300">
+                <i class="fa-solid fa-chart-pie"></i>
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white mb-4">
+                Interactive <span class="bg-gradient-to-r from-indigo-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">Power BI</span> Portfolio
+            </h1>
+            
+            <p class="text-base md:text-lg text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">
+                Transforming complex, fragmented corporate data into strategic business intelligence tools. Exploring complete data lifecycles from raw ingestion to robust modeling and executive analysis.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-2.5 max-w-3xl mx-auto">
+                <span class="bg-white/5 text-slate-200 border border-white/10 backdrop-blur-md px-4 py-1.5 rounded-xl text-xs font-medium tracking-wide flex items-center gap-2 shadow-sm">
+                    <i class="fa-solid fa-square-poll-vertical text-indigo-400"></i> Power BI Desktop
+                </span>
+                <span class="bg-white/5 text-slate-200 border border-white/10 backdrop-blur-md px-4 py-1.5 rounded-xl text-xs font-medium tracking-wide flex items-center gap-2 shadow-sm">
+                    <i class="fa-solid fa-calculator text-cyan-400"></i> Advanced DAX
+                </span>
+                <span class="bg-white/5 text-slate-200 border border-white/10 backdrop-blur-md px-4 py-1.5 rounded-xl text-xs font-medium tracking-wide flex items-center gap-2 shadow-sm">
+                    <i class="fa-solid fa-filter text-amber-400"></i> Power Query & ETL
+                </span>
+                <span class="bg-white/5 text-slate-200 border border-white/10 backdrop-blur-md px-4 py-1.5 rounded-xl text-xs font-medium tracking-wide flex items-center gap-2 shadow-sm">
+                    <i class="fa-solid fa-network-wired text-purple-400"></i> Star Schema Modeling
+                </span>
+                <span class="bg-white/5 text-slate-200 border border-white/10 backdrop-blur-md px-4 py-1.5 rounded-xl text-xs font-medium tracking-wide flex items-center gap-2 shadow-sm">
+                    <i class="fa-solid fa-database text-emerald-400"></i> Data Analytics
+                </span>
             </div>
         </div>
     </section>
