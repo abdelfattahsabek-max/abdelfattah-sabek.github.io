@@ -9,20 +9,46 @@
     <style>
         html { scroll-behavior: smooth; }
         
-        /* تحسينات احترافية */
-        .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.15);
+        /* خلفية احترافية متحركة */
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #eef2f7 100%);
+            position: relative;
         }
         
-        /* تأثير التلاشي عند التمرير */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.03) 0%, transparent 50%),
+                repeating-linear-gradient(45deg, rgba(0,0,0,0.02) 0px, rgba(0,0,0,0.02) 1px, transparent 1px, transparent 20px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* تأثيرات البطاقات */
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* تأثير التلاشي */
         .fade-up {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            transform: translateY(40px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
         }
         .fade-up.visible {
             opacity: 1;
@@ -36,8 +62,8 @@
             right: 30px;
             background: linear-gradient(135deg, #6366f1, #8b5cf6);
             color: white;
-            width: 50px;
-            height: 50px;
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -47,401 +73,405 @@
             visibility: hidden;
             transition: all 0.3s ease;
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
         }
         .back-to-top.show {
             opacity: 1;
             visibility: visible;
         }
         .back-to-top:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
         }
         
-        /* تخصيص شريط التمرير */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            border-radius: 10px;
-        }
+        /* شريط التمرير */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #e2e8f0; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(135deg, #6366f1, #8b5cf6); border-radius: 10px; }
         
-        /* تحسين الصور */
+        /* تأثير الصور */
         .dashboard-img {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.4s ease;
+            cursor: pointer;
         }
         .dashboard-img:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
+            transform: scale(1.01);
+            box-shadow: 0 15px 35px -12px rgba(0, 0, 0, 0.2);
         }
         
-        /* تنسيق البطاقات */
+        /* بطاقات الإحصائيات */
         .stat-card {
             transition: all 0.3s ease;
         }
         .stat-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.1);
         }
         
-        /* أنيميشن للروابط */
-        .btn-hover {
+        /* تنسيق feature cards */
+        .feature-card {
             transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        .feature-card:hover {
+            transform: translateX(5px);
+            border-color: #cbd5e1;
+            background-color: #faf5ff;
+        }
+        
+        /* شفافية للهيدر */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        /* hover للروابط */
+        .btn-gradient {
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
-        .btn-hover::after {
+        .btn-gradient::before {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.5s, height 0.5s;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+            z-index: -1;
         }
-        .btn-hover:hover::after {
-            width: 200px;
-            height: 200px;
+        .btn-gradient:hover::before {
+            left: 100%;
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-50 via-white to-slate-100">
+<body>
 
-    <!-- زر العودة للأعلى -->
-    <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        <i class="fa-solid fa-arrow-up"></i>
-    </div>
+    <div class="content-wrapper">
 
-    <!-- شريط التنقل المحسن -->
-    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg z-50 border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-lg font-bold text-indigo-600 hover:text-indigo-800 transition flex items-center gap-2 group">
-                <i class="fa-solid fa-arrow-left group-hover:-translate-x-1 transition"></i> 
-                Back to Home
-            </a>
-            <div class="flex items-center gap-4">
-                <span class="text-sm font-semibold text-slate-500 bg-slate-100 px-4 py-2 rounded-full">
-                    <i class="fa-solid fa-chart-line mr-2 text-indigo-500"></i> 4 Projects
-                </span>
-            </div>
+        <!-- زر العودة للأعلى -->
+        <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <i class="fa-solid fa-arrow-up text-xl"></i>
         </div>
-    </nav>
 
-    <!-- قسم الهيدر المحسن -->
-    <section class="pt-32 pb-16 bg-gradient-to-r from-indigo-700 via-indigo-800 to-indigo-900 text-white px-6 text-center relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <i class="fa-solid fa-chart-line absolute text-8xl top-10 left-10"></i>
-            <i class="fa-solid fa-chart-pie absolute text-6xl bottom-10 right-10"></i>
-            <i class="fa-solid fa-chart-simple absolute text-7xl top-1/2 left-1/4"></i>
-        </div>
-        <div class="max-w-4xl mx-auto relative z-10">
-            <div class="inline-block bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
-                <span class="text-sm font-semibold tracking-wide"><i class="fa-regular fa-folder-open mr-2"></i> My Portfolio</span>
-            </div>
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">📊 Power BI Projects</h1>
-            <p class="text-lg md:text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">Professional dashboards with detailed case studies, methodology, and business impact</p>
-            <div class="flex flex-wrap justify-center gap-3">
-                <span class="bg-white/20 backdrop-blur-sm px-5 py-2.5 rounded-full text-sm font-medium hover:bg-white/30 transition"><i class="fab fa-microsoft mr-2"></i>Power BI</span>
-                <span class="bg-white/20 backdrop-blur-sm px-5 py-2.5 rounded-full text-sm font-medium hover:bg-white/30 transition"><i class="fa-solid fa-calculator mr-2"></i>DAX</span>
-                <span class="bg-white/20 backdrop-blur-sm px-5 py-2.5 rounded-full text-sm font-medium hover:bg-white/30 transition"><i class="fa-solid fa-code mr-2"></i>Power Query</span>
-                <span class="bg-white/20 backdrop-blur-sm px-5 py-2.5 rounded-full text-sm font-medium hover:bg-white/30 transition"><i class="fa-solid fa-diagram-project mr-2"></i>Data Modeling</span>
-                <span class="bg-white/20 backdrop-blur-sm px-5 py-2.5 rounded-full text-sm font-medium hover:bg-white/30 transition"><i class="fa-solid fa-arrows-spin mr-2"></i>ETL</span>
-            </div>
-        </div>
-    </section>
-
-    <main class="py-12 px-6 max-w-7xl mx-auto">
-
-        <!-- Project 1 - Comprehensive Business Dashboard -->
-        <div class="mb-20 fade-up" id="project1">
-            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500">
-                <div class="bg-gradient-to-r from-purple-600 via-indigo-600 to-indigo-600 text-white px-8 py-5">
-                    <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                            <i class="fa-solid fa-chart-line text-2xl"></i>
-                        </div>
-                        <div>
-                            <h2 class="text-2xl font-bold">📈 Comprehensive Business Dashboard</h2>
-                            <p class="text-purple-100 mt-1">End-to-end business intelligence solution for executive decision making</p>
-                        </div>
-                    </div>
+        <!-- شريط التنقل -->
+        <nav class="glass-nav fixed top-0 left-0 right-0 shadow-md z-50 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="index.html" class="text-lg font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent hover:from-indigo-700 hover:to-purple-700 transition flex items-center gap-2 group">
+                    <i class="fa-solid fa-arrow-left group-hover:-translate-x-1 transition"></i> 
+                    Back to Home
+                </a>
+                <div class="flex items-center gap-4">
+                    <span class="text-sm font-semibold text-slate-600 bg-slate-100 px-4 py-2 rounded-full shadow-sm">
+                        <i class="fa-solid fa-chart-line mr-2 text-indigo-500"></i> 4 Projects
+                    </span>
                 </div>
-                <div class="p-8">
-                    <div class="mb-8 border border-slate-200 rounded-xl overflow-hidden shadow-md bg-slate-100 dashboard-img">
-                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 p-3 bg-white border-b"><i class="fa-solid fa-image mr-2 text-purple-500"></i> Dashboard Preview</p>
-                        <img src="image_2d81eb.jpg" alt="Comprehensive Business Dashboard Overview" class="w-full h-auto object-cover max-h-[500px]">
-                    </div>
+            </div>
+        </nav>
 
-                    <div class="grid md:grid-cols-3 gap-6 mb-8">
-                        <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-5 text-center stat-card border border-purple-100">
-                            <i class="fa-brands fa-github text-3xl text-purple-600 mb-2"></i>
-                            <p class="text-xs text-slate-500 uppercase tracking-wide">Repository</p>
-                            <p class="font-semibold text-sm mt-1">View on GitHub</p>
-                        </div>
-                        <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-5 text-center stat-card border border-purple-100">
-                            <i class="fa-solid fa-chart-line text-3xl text-purple-600 mb-2"></i>
-                            <p class="text-xs text-slate-500 uppercase tracking-wide">Key Metrics</p>
-                            <p class="font-semibold text-sm mt-1">Sales, Profit, Inventory, KPIs</p>
-                        </div>
-                        <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-5 text-center stat-card border border-purple-100">
-                            <i class="fa-solid fa-calendar text-3xl text-purple-600 mb-2"></i>
-                            <p class="text-xs text-slate-500 uppercase tracking-wide">Time Period</p>
-                            <p class="font-semibold text-sm mt-1">Multi-year analysis</p>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-6">
-                        <div class="bg-slate-50 rounded-xl p-5 border-l-4 border-purple-500">
-                            <h3 class="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-circle-info text-purple-500 text-lg"></i> Business Challenge</h3>
-                            <p class="text-slate-600 leading-relaxed">The organization lacked a centralized view of business performance across sales, inventory, and finance. Decision-makers relied on disparate Excel reports leading to delayed insights and missed opportunities.</p>
-                        </div>
-                        <div class="bg-slate-50 rounded-xl p-5">
-                            <h3 class="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-gear text-purple-500 text-lg"></i> Solution & Methodology</h3>
-                            <ul class="list-disc list-inside text-slate-600 space-y-2 ml-4">
-                                <li>Connected and transformed data from multiple sources using <strong class="text-purple-600">Power Query</strong> (sales, inventory, financial tables)</li>
-                                <li>Built a <strong class="text-purple-600">star schema data model</strong> with fact and dimension tables for optimal performance</li>
-                                <li>Created <strong class="text-purple-600">20+ DAX measures</strong> including YTD, MoM growth, moving averages, and variance analysis</li>
-                                <li>Designed interactive visuals with <strong class="text-purple-600">drill-through pages</strong> for detailed analysis by product category and region</li>
-                                <li>Implemented <strong class="text-purple-600">row-level security (RLS)</strong> for role-based access (managers see only their regions)</li>
-                            </ul>
-                        </div>
-                        <div class="bg-slate-50 rounded-xl p-5">
-                            <h3 class="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-chart-simple text-purple-500 text-lg"></i> Key Dashboard Features</h3>
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div class="bg-white rounded-xl p-4 border shadow-sm hover:shadow-md transition"><i class="fa-solid fa-chart-pie text-purple-500 mb-2"></i><p class="font-semibold">Sales Performance</p><p class="text-sm text-slate-500">Revenue trends, top products, regional breakdown</p></div>
-                                <div class="bg-white rounded-xl p-4 border shadow-sm hover:shadow-md transition"><i class="fa-solid fa-boxes text-purple-500 mb-2"></i><p class="font-semibold">Inventory Analysis</p><p class="text-sm text-slate-500">Stock levels, turnover ratios, reorder alerts</p></div>
-                                <div class="bg-white rounded-xl p-4 border shadow-sm hover:shadow-md transition"><i class="fa-solid fa-coins text-purple-500 mb-2"></i><p class="font-semibold">Financial KPIs</p><p class="text-sm text-slate-500">Gross margin, operating expenses, profit analysis</p></div>
-                                <div class="bg-white rounded-xl p-4 border shadow-sm hover:shadow-md transition"><i class="fa-solid fa-calendar-week text-purple-500 mb-2"></i><p class="font-semibold">Time Intelligence</p><p class="text-sm text-slate-500">YoY, QoQ, MoM comparisons with forecasting</p></div>
+        <!-- الهيدر الرئيسي -->
+        <section class="pt-32 pb-20 px-6 text-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-800"></div>
+            <div class="absolute inset-0 opacity-20">
+                <div class="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+                <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-300 rounded-full blur-3xl"></div>
+            </div>
+            <div class="max-w-4xl mx-auto relative z-10">
+                <div class="inline-block bg-white/15 backdrop-blur-md rounded-full px-6 py-2 mb-6 border border-white/20">
+                    <span class="text-sm font-semibold tracking-wide text-white"><i class="fa-regular fa-folder-open mr-2"></i> My Portfolio</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 text-white drop-shadow-2xl">📊 Power BI Projects</h1>
+                <p class="text-lg md:text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">Professional dashboards with detailed case studies, methodology, and business impact</p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="bg-white/20 backdrop-blur-sm px-5 py-2.5 rounded-full text-sm font-medium text-white hover:bg-white/30 transition shadow-lg"><i class="fab fa-microsoft mr-2"></i>Power BI</span>
+                    <span class="bg-white/20 backdrop-blur-sm px-5 py-2.5 rounded-full text-sm font-medium text-white hover:bg-white/30 transition shadow-lg"><i class="fa-solid fa-calculator mr-2"></i>DAX</span>
+                    <span class="bg-white/20 backdrop-blur-sm px-5 py-2.5 rounded-full text-sm font-medium text-white hover:bg-white/30 transition shadow-lg"><i class="fa-solid fa-code mr-2"></i>Power Query</span>
+                    <span class="bg-white/20 backdrop-blur-sm px-5 py-2.5 rounded-full text-sm font-medium text-white hover:bg-white/30 transition shadow-lg"><i class="fa-solid fa-diagram-project mr-2"></i>Data Modeling</span>
+                    <span class="bg-white/20 backdrop-blur-sm px-5 py-2.5 rounded-full text-sm font-medium text-white hover:bg-white/30 transition shadow-lg"><i class="fa-solid fa-arrows-spin mr-2"></i>ETL</span>
+                </div>
+            </div>
+        </section>
+
+        <main class="py-12 px-6 max-w-7xl mx-auto">
+
+            <!-- ==================== PROJECT 1 ==================== -->
+            <div class="mb-24 fade-up" id="project1">
+                <div class="bg-white rounded-3xl shadow-2xl overflow-hidden project-card">
+                    <div class="bg-gradient-to-r from-purple-600 via-indigo-600 to-indigo-600 text-white px-8 py-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+                                <i class="fa-solid fa-chart-line text-2xl"></i>
                             </div>
-                        </div>
-                        <div class="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-5">
-                            <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-chart-line text-emerald-500 text-lg"></i> Business Impact</h3>
-                            <div class="grid md:grid-cols-3 gap-4 text-center">
-                                <div class="bg-white rounded-xl p-4 shadow-sm"><p class="text-3xl font-bold text-emerald-600">35%</p><p class="text-xs text-slate-500 font-semibold">Reduction in reporting time</p></div>
-                                <div class="bg-white rounded-xl p-4 shadow-sm"><p class="text-3xl font-bold text-emerald-600">Real-time</p><p class="text-xs text-slate-500 font-semibold">Data refresh daily</p></div>
-                                <div class="bg-white rounded-xl p-4 shadow-sm"><p class="text-3xl font-bold text-emerald-600">Single</p><p class="text-xs text-slate-500 font-semibold">Source of Truth</p></div>
+                            <div>
+                                <h2 class="text-2xl font-bold">📈 Comprehensive Business Dashboard</h2>
+                                <p class="text-purple-100 mt-1">End-to-end business intelligence solution for executive decision making</p>
                             </div>
                         </div>
                     </div>
-                    <div class="mt-8 flex gap-4 flex-wrap">
-                        <a href="https://github.com/abdelfattah-sabek/abdelfattah-sabek.github.io" target="_blank" class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-xl hover:from-purple-700 hover:to-indigo-700 transition flex items-center gap-2 shadow-lg"><i class="fa-brands fa-github"></i> View on GitHub →</a>
-                        <a href="image_2b3c47.png" target="_blank" class="bg-amber-100 text-amber-700 px-6 py-3 rounded-xl hover:bg-amber-200 transition flex items-center gap-2"><i class="fa-solid fa-eye"></i> View Power Query Steps →</a>
-                        <a href="#project2" class="bg-slate-200 text-slate-700 px-6 py-3 rounded-xl hover:bg-slate-300 transition">↓ Next Project</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    <div class="p-8">
+                        <!-- Dashboard Preview -->
+                        <div class="mb-8 border border-slate-200 rounded-2xl overflow-hidden shadow-lg bg-slate-100 dashboard-img">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 p-3 bg-white border-b"><i class="fa-solid fa-image mr-2 text-purple-500"></i> Dashboard Preview</p>
+                            <img src="image_2d81eb.jpg" alt="Comprehensive Business Dashboard Overview" class="w-full h-auto object-cover">
+                        </div>
 
-        <!-- Project 2 - HR Analytics Dashboard -->
-        <div class="mb-20 fade-up" id="project2">
-            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
-                <div class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-5">
-                    <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                            <i class="fa-solid fa-users text-2xl"></i>
-                        </div>
-                        <div>
-                            <h2 class="text-2xl font-bold">👥 HR Analytics Dashboard</h2>
-                            <p class="text-emerald-100 mt-1">Workforce analytics to reduce attrition and optimize talent management</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-8">
-                    <div class="mb-8 border border-slate-200 rounded-xl overflow-hidden shadow-md bg-slate-100 dashboard-img">
-                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 p-3 bg-white border-b"><i class="fa-solid fa-image mr-2 text-emerald-500"></i> Dashboard Preview</p>
-                        <img src="image_2d7302.png" alt="HR Analytics Dashboard Overview" class="w-full h-auto object-cover max-h-[500px]">
-                    </div>
-
-                    <div class="grid md:grid-cols-3 gap-6 mb-8">
-                        <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-5 text-center stat-card border border-emerald-100">
-                            <i class="fa-brands fa-github text-3xl text-emerald-600 mb-2"></i>
-                            <p class="text-xs text-slate-500 uppercase tracking-wide">Repository</p>
-                            <p class="font-semibold text-sm mt-1">View on GitHub</p>
-                        </div>
-                        <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-5 text-center stat-card border border-emerald-100">
-                            <i class="fa-solid fa-users text-3xl text-emerald-600 mb-2"></i>
-                            <p class="text-xs text-slate-500 uppercase tracking-wide">Focus</p>
-                            <p class="font-semibold text-sm mt-1">Attrition & Recruitment</p>
-                        </div>
-                        <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-5 text-center stat-card border border-emerald-100">
-                            <i class="fa-solid fa-chart-line text-3xl text-emerald-600 mb-2"></i>
-                            <p class="text-xs text-slate-500 uppercase tracking-wide">Key Metrics</p>
-                            <p class="font-semibold text-sm mt-1">Retention, Satisfaction, Headcount</p>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-6">
-                        <div class="bg-slate-50 rounded-xl p-5 border-l-4 border-emerald-500">
-                            <h3 class="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-circle-info text-emerald-500 text-lg"></i> Business Challenge</h3>
-                            <p class="text-slate-600 leading-relaxed">High employee turnover and lack of visibility into attrition drivers. HR team needed data-driven insights to improve retention strategies and recruitment efficiency.</p>
-                        </div>
-                        <div class="bg-slate-50 rounded-xl p-5">
-                            <h3 class="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-gear text-emerald-500 text-lg"></i> Solution & Methodology</h3>
-                            <ul class="list-disc list-inside text-slate-600 space-y-2 ml-4">
-                                <li>Cleaned and merged employee data, performance reviews, and exit interviews using <strong class="text-emerald-600">Power Query</strong></li>
-                                <li>Built <strong class="text-emerald-600">DAX measures</strong> for attrition rate, average tenure, hiring funnel conversion, and satisfaction scores</li>
-                                <li>Created department-level KPIs with trend analysis over 3 years</li>
-                                <li>Designed what-if parameters to simulate retention program impact</li>
-                            </ul>
-                        </div>
-                        <div class="bg-slate-50 rounded-xl p-5">
-                            <h3 class="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-chart-simple text-emerald-500 text-lg"></i> Key Dashboard Features</h3>
-                            <div class="grid md:grid-cols-2 gap-4">
-                                <div class="bg-white rounded-xl p-4 border shadow-sm hover:shadow-md transition"><p class="font-semibold">📊 Attrition Analysis</p><p class="text-sm text-slate-500">By department, role, age group, tenure</p></div>
-                                <div class="bg-white rounded-xl p-4 border shadow-sm hover:shadow-md transition"><p class="font-semibold">🎯 Recruitment Funnel</p><p class="text-sm text-slate-500">Applications → Interviews → Hires</p></div>
-                                <div class="bg-white rounded-xl p-4 border shadow-sm hover:shadow-md transition"><p class="font-semibold">⭐ Employee Satisfaction</p><p class="text-sm text-slate-500">Survey scores by team and manager</p></div>
-                                <div class="bg-white rounded-xl p-4 border shadow-sm hover:shadow-md transition"><p class="font-semibold">💰 Cost of Turnover</p><p class="text-sm text-slate-500">Financial impact of attrition</p></div>
+                        <!-- Stats Cards -->
+                        <div class="grid md:grid-cols-3 gap-6 mb-8">
+                            <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-5 text-center stat-card shadow-sm">
+                                <i class="fa-brands fa-github text-3xl text-purple-600 mb-2"></i>
+                                <p class="text-xs text-slate-500 uppercase tracking-wide font-semibold">Repository</p>
+                                <p class="font-semibold text-slate-700 mt-1">View on GitHub</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-5 text-center stat-card shadow-sm">
+                                <i class="fa-solid fa-chart-line text-3xl text-purple-600 mb-2"></i>
+                                <p class="text-xs text-slate-500 uppercase tracking-wide font-semibold">Key Metrics</p>
+                                <p class="font-semibold text-slate-700 mt-1">Sales, Profit, Inventory, KPIs</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-5 text-center stat-card shadow-sm">
+                                <i class="fa-solid fa-calendar text-3xl text-purple-600 mb-2"></i>
+                                <p class="text-xs text-slate-500 uppercase tracking-wide font-semibold">Time Period</p>
+                                <p class="font-semibold text-slate-700 mt-1">Multi-year analysis</p>
                             </div>
                         </div>
-                        <div class="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-5">
-                            <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-chart-line text-emerald-500 text-lg"></i> Business Impact</h3>
-                            <div class="grid md:grid-cols-3 gap-4 text-center">
-                                <div class="bg-white rounded-xl p-4 shadow-sm"><p class="text-3xl font-bold text-emerald-600">15%</p><p class="text-xs text-slate-500 font-semibold">Reduction in attrition</p></div>
-                                <div class="bg-white rounded-xl p-4 shadow-sm"><p class="text-3xl font-bold text-emerald-600">30%</p><p class="text-xs text-slate-500 font-semibold">Faster hiring process</p></div>
-                                <div class="bg-white rounded-xl p-4 shadow-sm"><p class="text-3xl font-bold text-emerald-600">↑22%</p><p class="text-xs text-slate-500 font-semibold">Employee satisfaction</p></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-8 flex gap-4 flex-wrap">
-                        <a href="https://github.com/abdelfattah-sabek/abdelfattah-sabek.github.io" target="_blank" class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 py-3 rounded-xl hover:from-emerald-700 hover:to-teal-700 transition flex items-center gap-2 shadow-lg"><i class="fa-brands fa-github"></i> View on GitHub →</a>
-                        <a href="image_2d6bfa.png" target="_blank" class="bg-teal-100 text-teal-700 px-6 py-3 rounded-xl hover:bg-teal-200 transition flex items-center gap-2"><i class="fa-solid fa-code"></i> View HR Power Query Script →</a>
-                        <a href="#project3" class="bg-slate-200 text-slate-700 px-6 py-3 rounded-xl hover:bg-slate-300 transition">↓ Next Project</a>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Project 3 - Bakery Sales Analytics -->
-        <div class="mb-20 fade-up" id="project3">
-            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
-                <div class="bg-gradient-to-r from-amber-600 to-orange-600 text-white px-8 py-5">
-                    <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                            <i class="fa-solid fa-cake-candles text-2xl"></i>
-                        </div>
-                        <div>
-                            <h2 class="text-2xl font-bold">🥐 Bakery Sales Analytics</h2>
-                            <p class="text-amber-100 mt-1">Sales performance optimization for multi-branch bakery chain</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-8">
-                    <div class="mb-8 border border-slate-200 rounded-xl overflow-hidden shadow-md bg-slate-100 dashboard-img">
-                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 p-3 bg-white border-b"><i class="fa-solid fa-image mr-2 text-amber-500"></i> Dashboard Preview</p>
-                        <img src="bakery-sales-dashboard-main.png" alt="Bakery Sales Dashboard Overview" class="w-full h-auto object-cover max-h-[500px]">
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-6 mb-8">
-                        <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-5 text-center stat-card border border-amber-100">
-                            <i class="fa-solid fa-image text-3xl text-amber-600 mb-2"></i>
-                            <p class="text-xs text-slate-500 uppercase tracking-wide">Assets</p>
-                            <p class="font-semibold text-sm mt-1">Dashboard + Data Cleaning Script</p>
-                        </div>
-                        <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-5 text-center stat-card border border-amber-100">
-                            <i class="fa-solid fa-chart-line text-3xl text-amber-600 mb-2"></i>
-                            <p class="text-xs text-slate-500 uppercase tracking-wide">Focus</p>
-                            <p class="font-semibold text-sm mt-1">Sales Trends & Product Performance</p>
-                        </div>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <div class="space-y-4">
-                            <div class="bg-slate-50 rounded-xl p-5 border-l-4 border-amber-500">
-                                <h3 class="text-xl font-bold mb-2 text-slate-800">📋 Business Challenge</h3>
-                                <p class="text-slate-600">Bakery chain with multiple locations lacked visibility into peak hours, best-selling products, and underperforming stores. Manual Excel reporting was time-consuming and error-prone.</p>
+                        <!-- Content Details -->
+                        <div class="space-y-6">
+                            <div class="bg-slate-50 rounded-2xl p-6 border-l-4 border-purple-500">
+                                <h3 class="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-circle-info text-purple-500"></i> Business Challenge</h3>
+                                <p class="text-slate-600 leading-relaxed">The organization lacked a centralized view of business performance across sales, inventory, and finance. Decision-makers relied on disparate Excel reports leading to delayed insights and missed opportunities.</p>
                             </div>
-                            <div class="bg-slate-50 rounded-xl p-5">
-                                <h3 class="text-xl font-bold mb-2 text-slate-800">⚙️ Technical Approach</h3>
-                                <ul class="list-disc list-inside text-slate-600 ml-4 space-y-1">
-                                    <li>Extracted and cleaned transaction data using <strong class="text-amber-600">Power Query</strong></li>
-                                    <li>Created calculated columns for hour, day, and product categories</li>
-                                    <li>Built <strong class="text-amber-600">DAX measures</strong> for average order value and sales velocity</li>
-                                    <li>Designed mobile-responsive dashboard for store managers</li>
+
+                            <div class="bg-slate-50 rounded-2xl p-6">
+                                <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-gear text-purple-500"></i> Solution & Methodology</h3>
+                                <ul class="list-disc list-inside text-slate-600 space-y-2 ml-4">
+                                    <li>Connected and transformed data from multiple sources using <strong class="text-purple-600">Power Query</strong> (sales, inventory, financial tables)</li>
+                                    <li>Built a <strong class="text-purple-600">star schema data model</strong> with fact and dimension tables for optimal performance</li>
+                                    <li>Created <strong class="text-purple-600">20+ DAX measures</strong> including YTD, MoM growth, moving averages, and variance analysis</li>
+                                    <li>Designed interactive visuals with <strong class="text-purple-600">drill-through pages</strong> for detailed analysis by product category and region</li>
+                                    <li>Implemented <strong class="text-purple-600">row-level security (RLS)</strong> for role-based access (managers see only their regions)</li>
                                 </ul>
                             </div>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="bg-slate-50 rounded-xl p-5">
-                                <h3 class="text-xl font-bold mb-2 text-slate-800">📸 Visual Assets</h3>
-                                <div class="flex gap-3 flex-wrap">
-                                    <a href="bakery-sales-dashboard-main.png" target="_blank" class="bg-amber-100 text-amber-700 px-4 py-2 rounded-lg text-sm hover:bg-amber-200 flex items-center gap-2"><i class="fa-solid fa-chart-pie"></i> View Dashboard</a>
-                                    <a href="bakery-data-cleaning-powerquery.png" target="_blank" class="bg-slate-100 text-slate-600 px-4 py-2 rounded-lg text-sm hover:bg-slate-200 flex items-center gap-2"><i class="fa-solid fa-code"></i> View Power Query</a>
+
+                            <div class="bg-slate-50 rounded-2xl p-6">
+                                <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-chart-simple text-purple-500"></i> Key Dashboard Features</h3>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-white rounded-xl p-4 feature-card"><i class="fa-solid fa-chart-pie text-purple-500 mb-2 text-lg"></i><p class="font-semibold">Sales Performance</p><p class="text-sm text-slate-500">Revenue trends, top products, regional breakdown</p></div>
+                                    <div class="bg-white rounded-xl p-4 feature-card"><i class="fa-solid fa-boxes text-purple-500 mb-2 text-lg"></i><p class="font-semibold">Inventory Analysis</p><p class="text-sm text-slate-500">Stock levels, turnover ratios, reorder alerts</p></div>
+                                    <div class="bg-white rounded-xl p-4 feature-card"><i class="fa-solid fa-coins text-purple-500 mb-2 text-lg"></i><p class="font-semibold">Financial KPIs</p><p class="text-sm text-slate-500">Gross margin, operating expenses, profit analysis</p></div>
+                                    <div class="bg-white rounded-xl p-4 feature-card"><i class="fa-solid fa-calendar-week text-purple-500 mb-2 text-lg"></i><p class="font-semibold">Time Intelligence</p><p class="text-sm text-slate-500">YoY, QoQ, MoM comparisons with forecasting</p></div>
                                 </div>
                             </div>
-                            <div class="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-5">
-                                <h3 class="text-xl font-bold mb-2 text-slate-800">📈 Business Impact</h3>
-                                <div class="grid grid-cols-2 gap-3">
-                                    <div class="bg-white rounded-xl p-3 text-center shadow-sm"><p class="text-2xl font-bold text-emerald-600">20%</p><p class="text-xs text-slate-500">Sales increase (peak hours)</p></div>
-                                    <div class="bg-white rounded-xl p-3 text-center shadow-sm"><p class="text-2xl font-bold text-emerald-600">40%</p><p class="text-xs text-slate-500">Faster reporting</p></div>
+
+                            <div class="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6">
+                                <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-chart-line text-emerald-500"></i> Business Impact</h3>
+                                <div class="grid md:grid-cols-3 gap-4 text-center">
+                                    <div class="bg-white rounded-xl p-4 shadow-sm"><p class="text-3xl font-bold text-emerald-600">35%</p><p class="text-xs text-slate-500 font-semibold">Reduction in reporting time</p></div>
+                                    <div class="bg-white rounded-xl p-4 shadow-sm"><p class="text-3xl font-bold text-emerald-600">Real-time</p><p class="text-xs text-slate-500 font-semibold">Data refresh daily</p></div>
+                                    <div class="bg-white rounded-xl p-4 shadow-sm"><p class="text-3xl font-bold text-emerald-600">Single</p><p class="text-xs text-slate-500 font-semibold">Source of Truth</p></div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="mt-6 text-center text-slate-500 text-sm bg-slate-50 p-3 rounded-lg border border-slate-200">
-                        📌 Data cleaning script and source file <strong>Future-Orders.xlsx</strong> available in the GitHub repository.
+
+                        <div class="mt-8 flex gap-4 flex-wrap">
+                            <a href="https://github.com/abdelfattah-sabek/abdelfattah-sabek.github.io" target="_blank" class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-xl hover:from-purple-700 hover:to-indigo-700 transition flex items-center gap-2 shadow-lg btn-gradient"><i class="fa-brands fa-github"></i> View on GitHub →</a>
+                            <a href="image_2b3c47.png" target="_blank" class="bg-amber-100 text-amber-700 px-6 py-3 rounded-xl hover:bg-amber-200 transition flex items-center gap-2"><i class="fa-solid fa-eye"></i> View Power Query Steps →</a>
+                            <a href="#project2" class="bg-slate-200 text-slate-700 px-6 py-3 rounded-xl hover:bg-slate-300 transition">↓ Next Project</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Project 4 - Car Sales Dashboard -->
-        <div class="mb-20 fade-up" id="project4">
-            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
-                <div class="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-5">
-                    <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                            <i class="fa-solid fa-car text-2xl"></i>
+            <!-- ==================== PROJECT 2 ==================== -->
+            <div class="mb-24 fade-up" id="project2">
+                <div class="bg-white rounded-3xl shadow-2xl overflow-hidden project-card">
+                    <div class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center">
+                                <i class="fa-solid fa-users text-2xl"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold">👥 HR Analytics Dashboard</h2>
+                                <p class="text-emerald-100 mt-1">Workforce analytics to reduce attrition and optimize talent management</p>
+                            </div>
                         </div>
-                        <div>
-                            <h2 class="text-2xl font-bold">🚗 Car Sales Dashboard</h2>
-                            <p class="text-blue-100 mt-1">Dealership performance & inventory optimization</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="mb-8 border border-slate-200 rounded-2xl overflow-hidden shadow-lg bg-slate-100 dashboard-img">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 p-3 bg-white border-b"><i class="fa-solid fa-image mr-2 text-emerald-500"></i> Dashboard Preview</p>
+                            <img src="image_2d7302.png" alt="HR Analytics Dashboard Overview" class="w-full h-auto object-cover">
+                        </div>
+
+                        <div class="grid md:grid-cols-3 gap-6 mb-8">
+                            <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-5 text-center stat-card">
+                                <i class="fa-brands fa-github text-3xl text-emerald-600 mb-2"></i>
+                                <p class="text-xs text-slate-500 font-semibold">Repository</p>
+                                <p class="font-semibold mt-1">View on GitHub</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-5 text-center stat-card">
+                                <i class="fa-solid fa-users text-3xl text-emerald-600 mb-2"></i>
+                                <p class="text-xs text-slate-500 font-semibold">Focus</p>
+                                <p class="font-semibold mt-1">Attrition & Recruitment</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-5 text-center stat-card">
+                                <i class="fa-solid fa-chart-line text-3xl text-emerald-600 mb-2"></i>
+                                <p class="text-xs text-slate-500 font-semibold">Key Metrics</p>
+                                <p class="font-semibold mt-1">Retention, Satisfaction, Headcount</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="bg-slate-50 rounded-2xl p-6 border-l-4 border-emerald-500">
+                                <h3 class="text-xl font-bold mb-3"><i class="fa-solid fa-circle-info text-emerald-500 mr-2"></i> Business Challenge</h3>
+                                <p class="text-slate-600">High employee turnover and lack of visibility into attrition drivers. HR team needed data-driven insights to improve retention strategies and recruitment efficiency.</p>
+                            </div>
+                            <div class="bg-slate-50 rounded-2xl p-6">
+                                <h3 class="text-xl font-bold mb-3"><i class="fa-solid fa-gear text-emerald-500 mr-2"></i> Solution & Methodology</h3>
+                                <ul class="list-disc list-inside text-slate-600 space-y-2 ml-4">
+                                    <li>Cleaned and merged employee data, performance reviews, and exit interviews using <strong class="text-emerald-600">Power Query</strong></li>
+                                    <li>Built <strong class="text-emerald-600">DAX measures</strong> for attrition rate, average tenure, hiring funnel conversion, and satisfaction scores</li>
+                                    <li>Created department-level KPIs with trend analysis over 3 years</li>
+                                    <li>Designed what-if parameters to simulate retention program impact</li>
+                                </ul>
+                            </div>
+                            <div class="bg-slate-50 rounded-2xl p-6">
+                                <h3 class="text-xl font-bold mb-3"><i class="fa-solid fa-chart-simple text-emerald-500 mr-2"></i> Key Dashboard Features</h3>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-white rounded-xl p-4 feature-card"><p class="font-semibold">📊 Attrition Analysis</p><p class="text-sm text-slate-500">By department, role, age group, tenure</p></div>
+                                    <div class="bg-white rounded-xl p-4 feature-card"><p class="font-semibold">🎯 Recruitment Funnel</p><p class="text-sm text-slate-500">Applications → Interviews → Hires</p></div>
+                                    <div class="bg-white rounded-xl p-4 feature-card"><p class="font-semibold">⭐ Employee Satisfaction</p><p class="text-sm text-slate-500">Survey scores by team and manager</p></div>
+                                    <div class="bg-white rounded-xl p-4 feature-card"><p class="font-semibold">💰 Cost of Turnover</p><p class="text-sm text-slate-500">Financial impact of attrition</p></div>
+                                </div>
+                            </div>
+                            <div class="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6">
+                                <h3 class="text-xl font-bold mb-4"><i class="fa-solid fa-chart-line text-emerald-500 mr-2"></i> Business Impact</h3>
+                                <div class="grid md:grid-cols-3 gap-4 text-center">
+                                    <div class="bg-white rounded-xl p-4"><p class="text-3xl font-bold text-emerald-600">15%</p><p class="text-xs">Reduction in attrition</p></div>
+                                    <div class="bg-white rounded-xl p-4"><p class="text-3xl font-bold text-emerald-600">30%</p><p class="text-xs">Faster hiring process</p></div>
+                                    <div class="bg-white rounded-xl p-4"><p class="text-3xl font-bold text-emerald-600">↑22%</p><p class="text-xs">Employee satisfaction</p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 flex gap-4 flex-wrap">
+                            <a href="https://github.com/abdelfattah-sabek/abdelfattah-sabek.github.io" target="_blank" class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 py-3 rounded-xl hover:from-emerald-700 hover:to-teal-700 transition flex items-center gap-2 shadow-lg"><i class="fa-brands fa-github"></i> View on GitHub →</a>
+                            <a href="image_2d6bfa.png" target="_blank" class="bg-teal-100 text-teal-700 px-6 py-3 rounded-xl hover:bg-teal-200 transition flex items-center gap-2"><i class="fa-solid fa-code"></i> View HR Power Query Script →</a>
+                            <a href="#project3" class="bg-slate-200 text-slate-700 px-6 py-3 rounded-xl hover:bg-slate-300 transition">↓ Next Project</a>
                         </div>
                     </div>
                 </div>
-                <div class="p-8">
-                    <div class="grid md:grid-cols-2 gap-6 mb-8">
-                        <div class="border border-slate-200 rounded-xl overflow-hidden shadow-md bg-slate-100 dashboard-img">
-                            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 p-3 bg-white border-b"><i class="fa-solid fa-gauge mr-2 text-blue-500"></i> Dashboard Overview Page</p>
-                            <img src="car-sales-dashboard-overview.png" alt="Car Sales Dashboard Overview" class="w-full h-auto object-cover">
-                        </div>
-                        <div class="border border-slate-200 rounded-xl overflow-hidden shadow-md bg-slate-100 dashboard-img">
-                            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 p-3 bg-white border-b"><i class="fa-solid fa-diagram-project mr-2 text-blue-500"></i> Data Model Page</p>
-                            <img src="car-sales-data-model.png" alt="Car Sales Data Model" class="w-full h-auto object-cover">
+            </div>
+
+            <!-- ==================== PROJECT 3 ==================== -->
+            <div class="mb-24 fade-up" id="project3">
+                <div class="bg-white rounded-3xl shadow-2xl overflow-hidden project-card">
+                    <div class="bg-gradient-to-r from-amber-600 to-orange-600 text-white px-8 py-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center">
+                                <i class="fa-solid fa-cake-candles text-2xl"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold">🥐 Bakery Sales Analytics</h2>
+                                <p class="text-amber-100 mt-1">Sales performance optimization for multi-branch bakery chain</p>
+                            </div>
                         </div>
                     </div>
+                    <div class="p-8">
+                        <div class="mb-8 border border-slate-200 rounded-2xl overflow-hidden shadow-lg bg-slate-100 dashboard-img">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 p-3 bg-white border-b"><i class="fa-solid fa-image mr-2 text-amber-500"></i> Dashboard Preview</p>
+                            <img src="bakery-sales-dashboard-main.png" alt="Bakery Sales Dashboard Overview" class="w-full h-auto object-cover">
+                        </div>
 
-                    <div class="grid md:grid-cols-3 gap-6 mb-8">
-                        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-5 text-center stat-card border border-blue-100">
-                            <i class="fa-solid fa-screwdriver-wrench text-3xl text-blue-600 mb-2"></i>
-                            <p class="text-xs text-slate-500 uppercase tracking-wide">Core Tools</p>
-                            <p class="font-semibold text-sm mt-1">Power BI, Power Query, DAX</p>
+                        <div class="grid md:grid-cols-2 gap-6 mb-8">
+                            <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-5 text-center stat-card">
+                                <i class="fa-solid fa-image text-3xl text-amber-600 mb-2"></i>
+                                <p class="text-xs text-slate-500 font-semibold">Assets</p>
+                                <p class="font-semibold mt-1">Dashboard + Data Cleaning Script</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-5 text-center stat-card">
+                                <i class="fa-solid fa-chart-line text-3xl text-amber-600 mb-2"></i>
+                                <p class="text-xs text-slate-500 font-semibold">Focus</p>
+                                <p class="font-semibold mt-1">Sales Trends & Product Performance</p>
+                            </div>
                         </div>
-                        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-5 text-center stat-card border border-blue-100">
-                            <i class="fa-solid fa-chart-line text-3xl text-blue-600 mb-2"></i>
-                            <p class="text-xs text-slate-500 uppercase tracking-wide">Key Metrics</p>
-                            <p class="font-semibold text-sm mt-1">Total Sales, Sellers, Top Make</p>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-6">
+                                <div class="bg-slate-50 rounded-2xl p-6 border-l-4 border-amber-500">
+                                    <h3 class="text-xl font-bold mb-2">📋 Business Challenge</h3>
+                                    <p class="text-slate-600">Bakery chain with multiple locations lacked visibility into peak hours, best-selling products, and underperforming stores. Manual Excel reporting was time-consuming and error-prone.</p>
+                                </div>
+                                <div class="bg-slate-50 rounded-2xl p-6">
+                                    <h3 class="text-xl font-bold mb-3">⚙️ Technical Approach</h3>
+                                    <ul class="list-disc list-inside text-slate-600 space-y-2 ml-4">
+                                        <li>Extracted and cleaned transaction data using <strong class="text-amber-600">Power Query</strong> (removed duplicates, handled nulls, standardized date/time formats)</li>
+                                        <li>Created calculated columns for hour of day, day of week, and product categories</li>
+                                        <li>Built <strong class="text-amber-600">DAX measures</strong> for average order value, hourly sales velocity, and cannibalization analysis</li>
+                                        <li>Designed mobile-responsive dashboard for store managers</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="bg-slate-50 rounded-2xl p-6">
+                                    <h3 class="text-xl font-bold mb-3">📸 Visual Assets</h3>
+                                    <div class="flex gap-3 flex-wrap">
+                                        <a href="bakery-sales-dashboard-main.png" target="_blank" class="bg-amber-100 text-amber-700 px-4 py-2 rounded-xl text-sm hover:bg-amber-200 flex items-center gap-2"><i class="fa-solid fa-chart-pie"></i> View Dashboard Screenshot</a>
+                                        <a href="bakery-data-cleaning-powerquery.png" target="_blank" class="bg-slate-100 text-slate-600 px-4 py-2 rounded-xl text-sm hover:bg-slate-200 flex items-center gap-2"><i class="fa-solid fa-code"></i> View Power Query Steps</a>
+                                    </div>
+                                </div>
+                                <div class="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl p-6">
+                                    <h3 class="text-xl font-bold mb-3">📈 Business Impact</h3>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="bg-white rounded-xl p-4 text-center"><p class="text-2xl font-bold text-emerald-600">20%</p><p class="text-xs">Sales increase (peak hours)</p></div>
+                                        <div class="bg-white rounded-xl p-4 text-center"><p class="text-2xl font-bold text-emerald-600">40%</p><p class="text-xs">Faster reporting</p></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-5 text-center stat-card border border-blue-100">
-                            <i class="fa-solid fa-database text-3xl text-blue-600 mb-2"></i>
-                            <p class="text-xs text-slate-500 uppercase tracking-wide">Data Architecture</p>
-                            <p class="font-semibold text-sm mt-1">Star Schema Model Map</p>
+                        <div class="mt-6 text-center text-slate-500 text-sm bg-slate-50 p-3 rounded-xl border border-slate-200">
+                            📌 Data cleaning script and source file <strong>Future-Orders.xlsx</strong> available in the GitHub repository.
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="space-y-6">
-                        <div class="bg-slate-50 rounded-xl p-5 border-l-4 border-blue-500">
-                            <h3 class="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-circle-info text-blue-500 text-lg"></i> Business Challenge & Overview</h3>
-                            <p class="text-slate-600 leading-relaxed">An automotive dealership group required a centralized business intelligence solution to track comprehensive sales performance across multiple branches, sellers, and models. The core challenge involved transforming raw, unoptimized transactional records into deep analytical insights to identify peak selling periods, streamline inventory management, minimize carrying costs, and identify top-performing vehicle brands.</p>
+            <!-- ==================== PROJECT 4 ==================== -->
+            <div class="mb-24 fade-up" id="project4">
+                <div class="bg-white rounded-3xl shadow-2xl overflow-hidden project-card">
+                    <div class="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center">
+                                <i class="fa-solid fa-car text-2xl"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold">🚗 Car Sales Dashboard</h2>
+                                <p class="text-blue-100 mt-1">Dealership performance & inventory optimization</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="grid md:grid-cols-2 gap-6 mb-8">
+                            <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-lg bg-slate-100 dashboard-img">
+                                <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 p-3 bg-white border-b"><i class="fa-solid fa-gauge mr-2 text-blue-500"></i> Dashboard Overview Page</p>
+                                <img src="car-sales-dashboard-overview.png" alt="Car Sales Dashboard Overview" class="w-full h-auto object-cover">
+                            </div>
+                            <div class="border border-slate-200 rounded-2xl overflow-hidden shadow-lg bg-slate-100 dashboard-img">
+                                <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 p-3 bg-white border-b"><i class="fa-solid fa-trophy mr-2 text-blue-500"></i> Data Model Page</p>
+                                <img src="car-sales-data-model.png" alt="Car Sales Data Model" class="w-full h-auto object-cover">
+                            </div>
                         </div>
 
-                        <div class="bg-slate-50 rounded-xl p-5">
-                            <h3 class="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-gear text-blue-500 text-lg"></i> Technical Methodology & Tools Used</h3>
-                            <ul class="list-disc list-inside text-slate-600 space-y-2 ml-4">
-                                <li><strong class
+                        <div class="grid md:grid-cols-3 gap-6 mb-8">
+                            <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-5 text-center stat-card">
+                                <i class="fa-solid fa-screwdriver-wrench text-3xl text-blue-600 mb-2"></i>
+                                <p class="text-xs text-slate-500 font-semibold">Core Tools</p>
+                                <p class="font-semibold text-sm mt-1">Power BI, Power Query, DAX</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-5 text-center stat-card">
+                                <i class="fa-solid fa-chart-line text-3xl text-blue-600 mb-2"></i>
+                                <p class="text-xs text-slate-500 font-semibold">Key Performance Indicators</p>
+                                <p class="font-semibold text-sm mt-1">Total Sales, Sellers, Top Make</p>
+                            </div>
+                            <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-5 text-center stat-card">
+                                <i class="fa
