@@ -197,3 +197,106 @@
         <img src="car-sales-data-model.png" alt="Car Sales Data Model" class="w-full h-auto object-cover">
     </div>
 </div>
+<div class="mb-20" id="project4">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-4">
+                    <h2 class="text-2xl font-bold">🚗 Car Sales Dashboard</h2>
+                    <p class="text-blue-100 mt-1">Dealership performance & inventory optimization</p>
+                </div>
+                <div class="p-8">
+                    <div class="grid md:grid-cols-2 gap-4 mb-8">
+                        <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm bg-slate-100">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 p-2 bg-white border-b"><i class="fa-solid fa-gauge mr-1"></i> Dashboard Overview Page</p>
+                            <img src="car-sales-dashboard-overview.png" alt="Car Sales Dashboard Overview" class="w-full h-auto object-cover">
+                        </div>
+                        <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm bg-slate-100">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 p-2 bg-white border-b"><i class="fa-solid fa-trophy mr-1"></i> Data Model Page</p>
+                            <img src="car-sales-data-model.png" alt="Car Sales Data Model" class="w-full h-auto object-cover">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-blue-50 rounded-xl p-4 text-center">
+                            <i class="fa-solid fa-screwdriver-wrench text-2xl text-blue-600 mb-2"></i>
+                            <p class="text-xs text-slate-500">Core Tools</p>
+                            <p class="font-semibold text-sm">Power BI, Power Query, DAX</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-xl p-4 text-center">
+                            <i class="fa-solid fa-chart-line text-2xl text-blue-600 mb-2"></i>
+                            <p class="text-xs text-slate-500">Key Performance Indicators</p>
+                            <p class="font-semibold text-sm">Total Sales, Sellers, Top Make</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-xl p-4 text-center">
+                            <i class="fa-solid fa-database text-2xl text-blue-600 mb-2"></i>
+                            <p class="text-xs text-slate-500">Data Architecture</p>
+                            <p class="font-semibold text-sm">Star Schema Model Map</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-circle-info text-blue-500 text-lg"></i> Business Challenge & Overview</h3>
+                            <p class="text-slate-600 leading-relaxed">
+                                An automotive dealership group required a centralized business intelligence solution to track comprehensive sales performance across multiple branches, sellers, and models. The core challenge involved transforming raw, unoptimized transactional records into deep analytical insights to identify peak selling periods, streamline inventory management, minimize carrying costs, and identify top-performing vehicle brands.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-gear text-blue-500 text-lg"></i> Technical Methodology & Tools Used</h3>
+                            <ul class="list-disc list-inside text-slate-600 space-y-2 ml-4">
+                                <li><strong>Data Ingestion & ETL (Power Query):</strong> Cleaned raw dealership data by removing duplicates, managing null values, standardizing date-time formats, and partitioning metadata for seamless model integration.</li>
+                                <li><strong>Data Architecture & Modeling:</strong> Structured a high-performance <strong>Star Schema</strong> by establishing robust relational connections between fact sales tables and key dimension tables (Time, Vehicle Attributes, Sellers, and Locations).</li>
+                                <li><strong>Advanced Analytics (DAX Formulas):</strong> Engineered custom calculated columns and complex measures to extract high-level KPIs including seller distributions, brand market shares, totals, and historical monthly sales velocity.</li>
+                                <li><strong>Geographic & Visual Design:</strong> integrated <strong>Bing Maps API</strong> for real-time visual exploration of geographic sales distribution alongside multi-page navigation.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-chart-pie text-blue-500 text-lg"></i> Key Dashboard Features Explained</h3>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-slate-50 rounded-xl p-4 border">
+                                    <p class="font-semibold text-slate-800 flex items-center gap-2"><i class="fa-solid fa-gauge-high text-blue-500"></i> Sales Overview Page</p>
+                                    <p class="text-sm text-slate-500 mt-1">Tracks macro performance including total sellers ($14,181$), extensive color varieties ($20$), total volume ($7,555\text{M}$), and a historical line graph showing monthly trends with sharp surges in February and June.</p>
+                                </div>
+                                <div class="bg-slate-50 rounded-xl p-4 border">
+                                    <p class="font-semibold text-slate-800 flex items-center gap-2"><i class="fa-solid fa-arrow-up-wide-short text-blue-500"></i> Top Performers & Market Share</p>
+                                    <p class="text-sm text-slate-500 mt-1">Identifies the highest-selling manufacturer (<strong>Ford</strong>), leading model (<strong>F-150</strong>), and geographic market distributions via breakdown charts highlighting massive regional shares (e.g., Florida at $27.92\%$).</p>
+                                </div>
+                                <div class="bg-slate-50 rounded-xl p-4 border">
+                                    <p class="font-semibold text-slate-800 flex items-center gap-2"><i class="fa-solid fa-gears text-blue-500"></i> Core Business Logic</p>
+                                    <p class="text-sm text-slate-500 mt-1">Isolates transmission preferences showing automatic dominance over manual vehicles, and compares seller performances showing corporate leaders like Ford Motor Credit Company.</p>
+                                </div>
+                                <div class="bg-slate-50 rounded-xl p-4 border">
+                                    <p class="font-semibold text-slate-800 flex items-center gap-2"><i class="fa-solid fa-filter text-blue-500"></i> Multi-Dimensional Slicers</p>
+                                    <p class="text-sm text-slate-500 mt-1">Empowers managers with cross-filtering components to instantly slice data views by year, specific state locations, vehicle makes, and individual dealership networks.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-bullseye text-blue-500 text-lg"></i> Measurable Business Impact</h3>
+                            <div class="grid md:grid-cols-3 gap-4 text-center">
+                                <div class="bg-emerald-50 rounded-xl p-4">
+                                    <p class="text-2xl font-bold text-emerald-600">12%</p>
+                                    <p class="text-xs text-slate-500">Increase in Inventory Turnover</p>
+                                </div>
+                                <div class="bg-emerald-50 rounded-xl p-4">
+                                    <p class="text-2xl font-bold text-emerald-600">25%</p>
+                                    <p class="text-xs text-slate-500">Reduction in Reporting Time</p>
+                                </div>
+                                <div class="bg-emerald-50 rounded-xl p-4">
+                                    <p class="text-2xl font-bold text-emerald-600">Data-Driven</p>
+                                    <p class="text-xs text-slate-500">Procurement & Campaign Focus</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex gap-4 flex-wrap">
+                        <a href="https://github.com/abdelfattah-sabek/abdelfattah-sabek.github.io" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded-xl hover:bg-blue-700 transition flex items-center gap-2"><i class="fa-brands fa-github"></i> View Repository →</a>
+                        <a href="car-sales-dashboard-overview.png" target="_blank" class="bg-blue-100 text-blue-700 px-6 py-2 rounded-xl hover:bg-blue-200 transition flex items-center gap-2"><i class="fa-solid fa-eye"></i> Full Overview View →</a>
+                        <a href="car-sales-data-model.png" target="_blank" class="bg-slate-200 text-slate-700 px-6 py-2 rounded-xl hover:bg-slate-300 transition flex items-center gap-2"><i class="fa-solid fa-network-wired"></i> View Schema Map →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
